@@ -11,3 +11,8 @@ alert('Great, you can rent the movie for ' + movieRental + ' nights!');
 var googlePay = prompt ('How many hours did you work at Google this week?');
 console.log('Employee worked ' + googlePay + ' hours.');
 alert('Great, so you will get paid ' + '$' + googlePay*400 + ' dollars!')
+
+var fullClass = confirm ("Is this class full?");
+var classConflict = confirm ("Does this class interfere with your morning schedule?");
+alert ("Enrolled in class and does not conflict is a " + (fullClass && classConflict) + " statement.")
+
