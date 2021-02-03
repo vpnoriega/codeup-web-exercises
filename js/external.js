@@ -1,6 +1,7 @@
 console.log("Hello from External Javascript");
 alert("Welcome to my Website!");
 
+//Favorite Color
 var favoriteColor = prompt ('What is your favorite color?');
 console.log('The users favorite color is ' + favoriteColor + '!');
 alert('Cool, my favorite color is ' + favoriteColor + ' too!');
@@ -42,9 +43,11 @@ alert ('Cha Ching! You will get paid $' + totalPayCheck + " this week!");
 //Student Enrolled Problem
 var fullClass = confirm ("Is this class full?");
 var classConflict = confirm ("Does this class interfere with your morning schedule?");
-alert ("Enrolled in class and does not conflict is a " + (fullClass && classConflict) + " statement.")
-//
+alert ("Enrolled in class and does not conflict is a " + (!fullClass && !classConflict) + " statement.");
+
 //Product Expired Problem
-// var productExpired = confirm ("Is the offer expired?");
-// var memberType = confirm ("Are you a premium member?");
-// var numberofProducts = prompt ("How many products do you have?");
+var productExpired = confirm ("Is the offer still valid?");
+var memberType = confirm ("Are you a premium member?");
+var numberofProducts = parseInt(prompt ("How many products do you have?"))>=2;
+var canUserUseOffer = (numberofProducts|| memberType) && productExpired;
+alert ("Customer can use this offer is a " +canUserUseOffer+ " statement.");
