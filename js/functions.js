@@ -19,8 +19,7 @@ function sayHello (name) {
  *
  * console.log 'helloMessage' to check your work
  */
-sayHello('Vanessa');
-    var helloMessage = sayHello();
+    var helloMessage = sayHello('Vanessa');
     console.log(helloMessage);
 
 /**
@@ -30,7 +29,7 @@ sayHello('Vanessa');
  * console.
  */
 var myName = 'Vanessa';
-sayHello(myName);
+console.log (sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
