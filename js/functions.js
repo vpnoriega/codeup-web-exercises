@@ -10,8 +10,10 @@
  */
 
 function sayHello (name) {
-    return ("Hello, " + name + "!");
+    return "Hello, " + name + "!";
 }
+console.log(sayHello("codeup"));
+
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -29,6 +31,7 @@ function sayHello (name) {
  * console.
  */
 var myName = 'Vanessa';
+console.log(sayHello(myName));
 
 
 // Don't modify the following line, it generates a random number between 1 and 3
@@ -53,7 +56,7 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 function isTwo (num) {
-    return (num === 2);
+    return num === 2;
 }
 console.log(random, isTwo(random));
 
@@ -92,15 +95,12 @@ var tip = calculateTip(b,p);
  *
  * Example:
  * > var originalPrice = 100;
- * > var dicountPercent = .2; // 20%
- * > applyDiscount(originalPrice, dicountPercent) // 80
+ * > var discountPercent = .2; // 20%
+ * > applyDiscount(originalPrice, discountPercent) // 80
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 function applyDiscount (price,discNum) {
-    return (price - (price * discNum));
+    return price - (price * discNum);
 }
-var price = Number;
-var discNum = Number (0-1);
-
 console.log (applyDiscount(100,.8));
