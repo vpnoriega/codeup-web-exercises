@@ -25,12 +25,13 @@ function analyzeColor(colorName) {
         return ("Blue is the color of the sky!");
     } else if (colorName === 'red') {
         return ("Strawberries are red!");
-    } else {
-        return ("These colors are not listed above.");
+} else {
+        return (colorName + " is not listed above.");
     }
 }
 
-console.log(analyzeColor('grey'));
+var returnAnswer = analyzeColor('blue');
+console.log (returnAnswer);
 
 
 // Don't change the next two lines!
@@ -48,13 +49,12 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
-analyzeColor(randomColor)
-console.log(randomColor)
+console.log(analyzeColor(randomColor))
 
 /**
- * TODO:
- * Refactor your above function to use a switch-case statement
- */
+//  * TODO:
+//  * Refactor your above function to use a switch-case statement
+//  */
 
 switch (randomColor) {
     case "blue":
@@ -68,12 +68,12 @@ switch (randomColor) {
 }
 
 /**
- * TODO:
- * Prompt the user for a color when the page loads, and pass the input from the
- * user to your `analyzeColor` function. Alert the return value from your
- * function to show it to the user.
- */
-
+//  * TODO:
+//  * Prompt the user for a color when the page loads, and pass the input from the
+//  * user to your `analyzeColor` function. Alert the return value from your
+//  * function to show it to the user.
+//  */
+//
 var userColor = prompt("Enter your favorite color: ");
 alert(analyzeColor(userColor))
 
@@ -159,21 +159,36 @@ confirm ("Your total amount is $" + totalAmount + " so your discounted price is 
  * HINT: The way we prompt for a value could be improved
  */
 
- var userNumber = confirm ("Would you like to enter a number?");
- if(userNumber) {
-     Number(prompt("Enter a number: "));
+ var question = confirm("Would you like to enter a number?");
+    if (question){
+var answer = Number(prompt("Enter a number: "));
+if (answer) {
 
-     // don't know how to do this one:
-     // alert(userNumber === isOdd("Your number is Odd."))
+    var userHund = answer + 100
 
-     // don't know how to do this one:
-     // var userHund = userNumber+100
-     // alert ("Your number plus 100 is " + userHund);
+    if (answer % 2 === 0) {
+        console.log("The number is even.");
+        console.log("The number plus 100 is " + userHund)
 
-     // don't know how to do this one:
-     // alert (userNumber is +/-
+        if (answer < 0) {
+            console.log(answer + " is a negative number.");
+        } else {
+            console.log(answer + " is a positive number.")
+        }
 
-     // don't know how to this one:
-     // else if (userNumber!==Number) {
-     // alert("The value you entered is not a number.");}
+    } else {
+        console.log("The number is odd.");
+        console.log("The number plus 100 is " + userHund)
+
+        if (answer < 0) {
+            console.log(answer + " is a negative number.");
+        } else {
+            console.log(answer + " is a positive number.")
+        }
+    }
 }
+
+else{
+     alert("The value you entered is not a number.");
+    }
+ } else { console.log ("User pressed cancel.")}
