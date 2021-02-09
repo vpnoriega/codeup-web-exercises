@@ -49,22 +49,22 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
-console.log(analyzeColor(randomColor))
+console.log(analyzeColor(randomColor));
 
 /**
 //  * TODO:
 //  * Refactor your above function to use a switch-case statement
 //  */
 
-switch (randomColor) {
-    case "blue":
-        console.log("Blue is the color of the sky!");
-        break;
-    case "red":
-        console.log("Strawberries are red!");
-        break;
-    default:
-        console.log("These colors are not listed above.");
+function analyzeColor(colorName) {
+    switch (colorName) {
+        case "blue":
+            return "Blue is the color of the sky!";
+        case "red":
+            return "Strawberries are red!";
+        default:
+            return "This color is not listed above: " + colorName;
+    }
 }
 
 /**
@@ -75,7 +75,7 @@ switch (randomColor) {
 //  */
 //
 var userColor = prompt("Enter your favorite color: ");
-alert(analyzeColor(userColor))
+alert(analyzeColor(userColor));
 
 /* ########################################################################## */
 
@@ -126,7 +126,6 @@ function calculateTotal(luckyNum, totalAmount) {
 }
 
 
-
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -139,7 +138,7 @@ var luckyNumber = Math.floor(Math.random() * 6);
 
 var totalAmount = Number(prompt("What is your total amount?"));
 alert ("Your lucky number is: " + luckyNumber);
-confirm ("Your total amount is $" + totalAmount + " so your discounted price is now $" + calculateTotal(luckyNumber,totalAmount));
+alert ("Your total amount is $" + totalAmount + ", so your discounted price is now $" + calculateTotal(luckyNumber,totalAmount));
 
 
  /**
@@ -167,23 +166,23 @@ if (answer) {
     var userHund = answer + 100
 
     if (answer % 2 === 0) {
-        console.log("The number is even.");
-        console.log("The number plus 100 is " + userHund)
+        alert("The number is even.");
+        alert("The number plus 100 is " + userHund);
 
         if (answer < 0) {
-            console.log(answer + " is a negative number.");
+            alert(answer + " is a negative number.");
         } else {
-            console.log(answer + " is a positive number.")
+            alert(answer + " is a positive number.")
         }
 
     } else {
-        console.log("The number is odd.");
-        console.log("The number plus 100 is " + userHund)
+        alert("The number is odd.");
+        alert("The number plus 100 is " + userHund)
 
         if (answer < 0) {
-            console.log(answer + " is a negative number.");
+            alert(answer + " is a negative number.");
         } else {
-            console.log(answer + " is a positive number.")
+            alert(answer + " is a positive number.")
         }
     }
 }
