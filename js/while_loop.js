@@ -1,10 +1,10 @@
 //While Loop
-// var i = 1
-// while (i <= 16) {
-//     console.log(2**i);
-//     i++;
-//
-// }
+var i = 1
+while (i <= 16) {
+    console.log(2**i);
+    i++;
+
+}
 
 //Do While loop
 var allCones = Math.floor(Math.random() * 50) + 50;
