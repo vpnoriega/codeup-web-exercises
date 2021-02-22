@@ -12,8 +12,9 @@ console.log("How many cones I need to sell: " + allCones);
 
 do {
     var conesPerCustomer = Math.floor(Math.random() * 5) + 1;
-    allCones -= conesPerCustomer
-    if (conesPerCustomer < allCones) {
+
+    if (conesPerCustomer <= allCones) {
+        allCones -= conesPerCustomer // has to be INSIDE the if statement because it is considered a conditional, as in, you have to check how many cones you have first before you confirm the order
         console.log(conesPerCustomer + " cones sold.");
     }else {
         console.log("Cannot sell you " + conesPerCustomer + " cones, I only have " + allCones + " cones left!");
