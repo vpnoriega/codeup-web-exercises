@@ -91,5 +91,10 @@ function last (array){
 }
 console.log(last([1,2,3,4,5]))
 
+    // with .length:
+    function last (array){
+        return (array.length -1);
+    }
+    console.log(last(numbers));
 
 })();
