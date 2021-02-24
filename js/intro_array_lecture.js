@@ -114,7 +114,7 @@ console.log (daysOfTheWeek[0]);
 console.log (daysOfTheWeek[1]);
 console.log (daysOfTheWeek[2]);
 
-
+console.log ("The first 3 days of the week are: " + daysOfTheWeek[0] + " " + daysOfTheWeek[1]+ " " + daysOfTheWeek[2]);
 
 // TODO: console.log the first three elements of the favoriteFoods array
 console.log (favoriteFoods[0]);
@@ -126,6 +126,14 @@ console.log (favoriteFoods[2]);
 
 // TODO: create a function called `returnLastElement` that accepts an array and returns the last element of that array
 
+function returnLastElement (array){
+	var lastIndex = array.length -1;
+	return (array[lastIndex]);
+}
+console.log(returnLastElement(daysOfTheWeek));
+
+
+
 // we know we have to get the length of the array - 1
 // array.length - 1 <== represents the last item in an array
 
@@ -135,8 +143,8 @@ console.log (favoriteFoods[2]);
 //4. return the last item
 
 
-// console.log(returnLastElement(instructors)); //fernando
-// console.log(returnLastElement(daysOfTheWeek)); //sunday
+console.log(returnLastElement(instructors)); //fernando
+console.log(returnLastElement(daysOfTheWeek)); //sunday
 
 
 
@@ -147,31 +155,71 @@ console.log (favoriteFoods[2]);
 *************************************************************** */
 //  TODO TOGETHER: Log each element of the shapes array
 // TODO TOGETHER: Using a for loop, iterate through the shapes array and log each shape
-
+for (var i = 0; i < shapes.length; i++){
+	console.log(shapes[i]);
+}
 
 
 
 // TODO TOGETHER: Alert "that's my favorite shape!" when your favorite shape is iterated over in the loop.
 
-
+// for (var i = 0; i < shapes.length; i++){
+// 	console.log ("looping through the shapes array. We are at " + shapes[i] + " at position " + i );
+// 	if (shapes[i] === 'rectangle'){
+// 		alert(shapes[i] + " is my favorite shape");
+// 	}
+// }
 
 // TODO: What happens if we change var i = 1? or var i = 2;
-// TODO: What are benefits of using loops to iterate?
-// TODO: How does the loop know when to stop iterating?
+// it changes the initial start of the loop, or the array in this case
 
+// for (var i = 2; i < shapes.length; i++){
+// 	console.log ("looping through the shapes array. We are at " + shapes[i] + " at position " + i );
+// 	if (shapes[i] === 'rectangle'){
+// 		alert(shapes[i] + " is my favorite shape");
+// 	}
+// }
+
+// TODO: What are benefits of using loops to iterate?
+// you don't have type out the index, it's faster. It's easier to work with when handling large amounts of data. Less code so it's easier to pull data.
+// TODO: How does the loop know when to stop iterating?
+// when the condition is met within the for loop, the 2nd statement i<shapes.length. When the loop reaches the full length of the array
 
 // TODO: Using a for loop, iterate through the instructors array and console.log each instructor
-
+for (var i = 0; i < instructors.length; i++){
+	console.log(instructors[i]);
+}
 
 // TODO: Using a for loop, iterate through the daysOfTheWeek array and console.log each day of the week
+for (var i = 0; i < daysOfTheWeek.length; i++){
+	console.log(daysOfTheWeek[i]);
+}
 
 
 // TODO: Using a for loop, iterate through the favoriteFoods array and console.log each favorite food
-
+for (var i = 0; i < favoriteFoods.length; i++){
+	console.log(favoriteFoods[i]);
+}
 
 
 // TODO: Refactoring the instructor loop, alert "hey, I know <INSTRUCTOR NAME HERE>" if you have had class with that instructor. If you have not had class with that instructor, alert "I haven't had class with <INSTRUCTOR NAME HERE> yet!"
 
+// for (i = 0; i < instructors.length; i++){
+// 	if (instructors[i] === 'douglas',"kenneth","samuel"){
+// 		alert("Hey, I know "+ instructors[i]);
+// 	}else { console.log ("I haven't had class with " + instructors[i] + " yet");
+// }}
+//
+// for (var i = 0; i < instructors.length; i++){
+// 	var currentInstructor = instructors[i];
+// 		if (currentInstructor === 'douglas' ||currentInstructor === 'kenneth' || currentInstructor === 'samuel'){
+// 			alert("Hey, I know " + currentInstructor);
+// 		} else {
+// 			alert("I haven't had class with " + currentInstructor + " yet!");
+// 		}
+//
+// 	console.log(currentInstructor);
+// }
 
 
 /* ***************************************************************
@@ -179,19 +227,46 @@ console.log (favoriteFoods[2]);
 *************************************************************** */
 
 // TODO TOGETHER: Using a for each loop, console.log each shape from the shapes array
+shapes.forEach(function(shape){
+	console.log(shape);
+});
+/* what it is doing:
+var printShape = function(shape){
+	console.log(shape);
+	}
+	shapes.forEach(printShape);
+ */
+//forEach is calling on an array and a callback function, pass back the value, index, array. Doing a for loop over the array, and will call your callback, then you decide what to do with it. Here's the breakdown:
 
-
+/* function myForEach(array, callback){
+	for(var i =0; i < array.length; i++){
+		var currentitem = array[i];
+		callback(currentItem, i, array);
+	}
+} */
+/* Kenneth's comment: .forEach is looking forward to doing some work on each of your [“array”, “elements”] - it would like to know, though, your instructions and tasks to do *for each* of those individual things - the callback function gives it the task to do *for each* of them [console.log(shape)]*/
 
 // TODO TOGETHER: Using a for each loop, console.log each element from the following array: var pies = ["apple", "cherry", "key lime", "huckleberry"];
-
-
+pies.forEach(function(pie){
+	console.log(pie);
+});
 
 // TODO: Using a for each loop, iterate through the instructors array and console.log each instructor
-
+instructors.forEach(function(instructor){
+	console.log(instructor)
+})
 
 
 // TODO: Using a for each loop, iterate through the daysOfTheWeek array and console.log each day of the week
+daysOfTheWeek.forEach(function(day){
+	console.log(day);
+})
 
+// daysOfTheWeek.forEach(console.log); prints the item, the index, and the entire array
 
 
 // TODO: Using a for each loop, iterate through the favoriteFoods array and console.log each favorite food
+
+favoriteFoods.forEach(function(foods){
+	console.log(foods);
+})
