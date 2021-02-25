@@ -8,21 +8,21 @@ Our FUNCTIONS are called METHODS.
  */
 
 //Let's set up an object and .log it to see what we're looking at:
-
-var myCounty = {
-    name: "Bexar", // --> MIRA! name: key ; value: "Bexar" <-- MIRA!
-    countySeat: "San Antonio",
-    currentPop: 2003554
-}
-console.log(myCounty);
-
-var myDog = {
-    name: "Harley",
-    age: 1,
-    breed: "German Shepherd Mix"
-}
-
-console.log(myDog);
+//
+// var myCounty = {
+//     name: "Bexar", // --> MIRA! name: key ; value: "Bexar" <-- MIRA!
+//     countySeat: "San Antonio",
+//     currentPop: 2003554
+// }
+// console.log(myCounty);
+//
+// var myDog = {
+//     name: "Harley",
+//     age: 1,
+//     breed: "German Shepherd Mix"
+// }
+//
+// console.log(myDog);
 
 //.log-ing the above gets us the object 'printed' or 'viewed' in the console where we can click into the object to see its shape [properties]
 
@@ -34,20 +34,20 @@ console.log(myDog);
 
 // We can call the 'constructor' for an object and use it to create our objects:
 
-var myObject = new Object(); // --> on the right, is the constructor
+// var myObject = new Object(); // --> on the right, is the constructor
 
-console.log(myObject);
+// console.log(myObject);
 
 //MORE OFTEN, we'll use this object literal notation structure as shown above and below:
 
-var myObject2 = {};
+// var myObject2 = {};
 //
-console.log(myObject2);
+// console.log(myObject2);
 
 //* TODO: Create a new Object and call it 'myCar' using either way to do so shown above (object instance or object literal)
 
-var myCar = {};
-console.log(myCar);
+// var kensCar = {};
+// console.log(kensCar);
 
 // That's great! But our car object doesn't have much going on, does it? There's no depth or meat to it - how can we fill our object in?
 
@@ -63,27 +63,36 @@ console.log(myCar);
 
 // We can use dot notation to do so:
 
-// myCar.make = "Chevrolet";
+// kensCar.make = "Chevrolet"; // --> object.key = value;
 
 // Or array notation:
 
-// myCar["model"] = "Silverado";
+// kensCar["model"] = "Silverado"; // --> object[key] = value;
 
-//In general, dot notation is preferred of the two notations
+// MIRA --> In general, dot notation is preferred of the two notations
 
-//We can also set up our objects and properties during object creation
+//MIRA --> 3rd way: We can also set up our objects and properties during object creation
 // var sigotherCar = {
-//     make: "Honda",
+//     make: "Honda", //--> always have commas in object creation
 //     model: "Fit",
 //     year: 2010
 // }
-
+// console.log(sigotherCar)
 
 // TODO: Fill in your myCar object with properties of make, model, and year with the correct values. If you don't own a vehicle, fill in the details with your favorite vehicle.
 
+var myCar = {}
+
+myCar.make = "Toyota";
+myCar.model = "Corolla";
+myCar.year = 2021;
+
+console.log(myCar)
+ // --> the 3 details are considered PROPERTIES
+
 //For me? I'm missing the year for myCar so. .
 
-// myCar.year = 2017;
+// kensCar.year = 2017;
 
 //Now I have a completed example of the myCar object - the model and make were added above in prior examples
 
@@ -94,48 +103,57 @@ console.log(myCar);
 */
 
 
+
 /**/
 /**/
 //With our myCar objects set up, let's start utilizing them and diving into them!
 //We can use dot notation or array notation in similar ways to start accessing these properties
 //Let's share some information about our cars :)
 
-// console.log("Hey, y'all! I own a " + myCar["make"] + " " + myCar.model) //Should concat from these two properties into this structure like we've been used to doing with variables
+// console.log("Hey, y'all! I own a " + myCar["make"] + " " + myCar.model)
+// alert("Hey I own a " + myCar["make"] + " " + myCar.model); // <-- you can access the info with any method
+
+// Should concat from these two properties into this structure like we've been used to doing with variables
 
 //Speaking of variables, we can tap into our prior understanding of assigning variables thus far and assign a property to a variable:
 
-// var myCarYear = myCar.year;
+// var kensCarYear = kensCar.year;
 
-// console.log("Woops - forgot to tell you what year my vehicle is, it's model year " + myCarYear)
+// console.log("Woops - forgot to tell you what year my vehicle is, it's model year " + kensCarYear)
 
 //What if we wanted to create a more complicated piece of data? Perhaps a list of our cars FEATURES?
 
-// myCar.features = ["Heated/ventilated seats", "leather", "towing package", "bed liner"]
-
-
-//Now we could do something like this. . a list of those features in the console
-// for (let i = 0; i < myCar.features.length; i++){
-//     console.log("Here's one of my car's features: " + myCar.features[i])
+// kensCar.features = ["Heated/ventilated seats", "leather", "towing package", "bed liner"]
+//
+//
+// //Now we could do something like this. . a list of those features in the console
+// for (var i = 0; i < kensCar.features.length; i++){
+//     console.log("Here's one of my car's features: " + kensCar.features[i])
 // }
 
 // TODO: Add an array of features that your vehicle has!
+myCar.features = ["Moon roof", "push start", "back up camera", "hold button"]
 
 //What about who owns our car? That could be an object itself if we think it through - the owner has a firstName and a lastName at the very least, right?
 //Let's try nesting this object inside of our car object we've been building out
 
 // var carOwner = {firstName: "Kenneth", lastName: "Howell"}
-
-// myCar.owner = carOwner;
+//
+// kensCar.owner = carOwner;
 
 // TODO: Nest a 'carOwner' object of your own into this growing myCar object and console.log the results!
 
-// console.log(myCar);
+var carOwner = {firstName: "Vanessa", lastName: "Noriega"}
+
+myCar.owner = carOwner; //object.keyname = value; *in this case, the object is the value since it's an objected nested in an object
+
+console.log(myCar);
 
 //An object can also contain within itself a method (function). We can set it up similarly to our properties, but with a value that is the function expression
 
-// myCar.turnOn = function () {
-//     alert("Putting the key in the ignition - fired up the " + myCar.make + " " + myCar.model + " just fine!")
-// }
+myCar.turnOn = function () {
+    alert("Putting the key in the ignition - fired up the " + myCar.make + " " + myCar.model + " just fine!")
+}
 
 /*
 * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -144,8 +162,8 @@ console.log(myCar);
 */
 
 //Let's tie some things together: Let's make a garage with another car!
-
-// sigotherCar = {
+// --> "this" is a term/method that is used instead of
+// var sigotherCar = {
 //     make: "Honda",
 //     model: "Fit",
 //     year: 2010,
@@ -157,20 +175,42 @@ console.log(myCar);
 //         alert("Putting the key in the ignition - fired up the " + this.make + " " + this.model + " just fine!")
 //     }
 // }
-
-// var theGarage = [
-//     myCar,
-//     sigotherCar
-// ]
-
+// console.log(sigotherCar);
+//
+// var theGarage = [myCar, sigotherCar]
+//
 // console.log(theGarage);
 
 //Now: loop through an ARRAY of OBJECTS, accessing our turnOn function for our vehicles
 //Also note: we used the keyword *this* on the other vehicle's turnOn function, so this will be a good experiment to see the results
 
-
+//this will display both objects and it's properties in the console.log:
 // theGarage.forEach(function(car){
 //     car.turnOn();
 // })
 
 //One final TODO: A bigger task - set up your own garage and add at least another vehicle into it. Log your garage array to verify it contains the cars you want - once your garage has the right cars, write a loop to access some properties or a method from them!
+
+var otherCar = {}
+    otherCar.make = "Honda";
+    otherCar.model = "Civic";
+    otherCar.year = 2008;
+
+console.log(otherCar);
+
+otherCar.turnOn = function() {
+    alert("Putting the key in the ignition - fired up the " + this.make + " " + this.model + " just fine!")
+}
+
+var theGarage = [myCar, otherCar]
+
+console.log(theGarage);
+
+theGarage.forEach(function(car){
+    car.turnOn();
+})
+
+//Shan's exercise:
+// var turnMyCarOn = function () {
+//     alert("Putting the key in the ignition and fired up the " + this.make + " " + this.model + " just fine!" )
+// }
