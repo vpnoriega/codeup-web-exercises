@@ -13,10 +13,18 @@
      */
 
     var person = {}
-    person.firstName = "Vanessa";
-    person.lastName = "Noriega";
+    person.firstName = "Vanessa"; // --> object.key = 'value';
+    person.lastName = "Noriega"; // -->  object ['key'] = 'value'; **array notation**
 
-    console.log(person);
+    // var person = {
+    //     firstName: "Vanessa", // --> This is the most common way
+    //     lastName: "Noriega"
+    // }
+
+    console.log(person.firstName);
+    console.log(person.lastName);
+
+    // console.log(person); --> this will only show you: {firstName: "Vanessa", lastName:"Noriega"}
 
     /**
      * TODO:
@@ -32,7 +40,21 @@
         return "Hello " + person.firstName + " " + person.lastName + "!"
     }
 
-    console.log(sayHello())
+    console.log(sayHello());
+
+    //"this" is referencing the object name, so you can put:
+
+    // var sayGreeting = function (){
+    //         return "Hello " + this.firstName + " " + this.lastName + "!"
+    //     };
+
+    // person.sayHello = sayGreeting;
+    // personTwo.sayHello = sayGreeting
+
+    // console.log(person.sayHello())
+    // console.log(personTwo.sayHello())
+
+
 
 
     /** TODO:
@@ -63,10 +85,22 @@
         }
 
     }
-
+//shoppers is a list of people, shopper is just one person.
     shoppers.forEach(function (shopper) {
         console.log(shopper.name + " owes before discount $" + shopper.amount + " but with discount owes $" + discount(shopper.amount));
     });
+
+    /* sams way:
+    shoppers.forEach(function(shopper){
+        if (shopper.amount > 200){
+            var discount = shopper.amount *.12;
+            var newAmount = shopper.amount = discount;
+            console.log(shopper.name + " you were originally going to spend $" + shopper.amount + ", but your discount total is now $" + newAmount + "!")
+        } else {
+        console.log(shopper.name + " you still owe $" + shopper.amount + " you did not get a discount." )
+      })
+     */
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -119,6 +153,7 @@
         }
     ];
 
+    // console.log(books[0].title + ", written by: " + books[0].author.firstName + " " + books[0].author.lastName);
 
     /**
      * TODO:
@@ -148,6 +183,16 @@
     for (var i = 0; i < books.length; i++) {
         console.log("Book # " + (i + 1) + '\n' + "Title: " + books[i].title + '\n' + "Author: " + books[i].author.firstName + " " + books[i].author.lastName);
     }
+
+    /* Sams way:
+    books.forEach(function(book,index){
+        console.log("Book # " + (index + 1);
+        console.log("Title " + book.title);
+        console.log("Author " + book.author.firstName + " " + book.author.lastName);
+        console.log("---");
+    })
+He also showed the way for line break, pretty much the same except he referred to the index number directly in "Book # " + (index + 1));
+     */
 
 // The initial set up for the console log:
 // books[i].title + ", written by: " + books[i].author.firstName + " " + books[i].author.lastName)
@@ -185,6 +230,7 @@
 //             }]
 //         return book
 // }
+
 console.log(createBook('x','y'))
 
     function showBookInfo(book){
