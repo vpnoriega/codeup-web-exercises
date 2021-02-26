@@ -218,20 +218,7 @@ He also showed the way for line break, pretty much the same except he referred t
         book.author = author;
         return book
     }
-
-//     function createBook(title, authorFirst, authorLast) {
-//         var book = [
-//             {
-//                 title: title,
-//                 author: {
-//                     firstName: authorFirst,
-//                     lastName: authorLast
-//                 }
-//             }]
-//         return book
-// }
-
-console.log(createBook('x','y'))
+    console.log(createBook('x','y'))
 
     function showBookInfo(book){
         for (var i = 0; i < book.length; i++) {
@@ -239,5 +226,33 @@ console.log(createBook('x','y'))
         }
     }
     console.log(showBookInfo(books))
+
+
+    /*   SAM's Way, I couldn't figure it out:
+
+ function createBook(title, authorFirst, authorLast) {
+         return {
+                 title: title,
+                 author: {
+                    firstName: authorFirst,
+                    lastName: authorLast
+                }
+            }
+        }
+       console.log(createBook('Book Title Name', 'First Name' , 'Last Name')
+
+ function showBookInfo (bookObject, bookNumber){
+    console.log("Book # " + (index + 1);
+    console.log("Title " + book.title);
+    console.log("Author " + book.author.firstName + " " + book.author.lastName);
+    console.log("---");
+
+ books.push(creatBook(book,index){
+    showBookInfo(book,index);
+ })
+
+*/
+
+
 
 })();
