@@ -6,11 +6,48 @@
 </head>
 <body>
 <form method="POST" action="https://request-inspector.glitch.me/">
+
+    <label> Email
+    <input type="email" name="email">
+    </label>
+    <br>
+
     <label for="Zip Code">Zip Code</label>
-    <input id="Zip Code" name="Zip Code" type="number">
-    <button type="submit">Search</button>
+    <input id="Zip Code" name="Zip Code" type="number" placeholder="54321">
+    <br>
+
+    <label>Password
+    <input type="password" name="userPassword"> <!-- the input type password makes the text bullets, as hidden-->
+    </label>
+
+    <input type ="hidden" value="HiddenValue"> <!--this for backend to view hidden values, ie. employee id, long serial number etc.-->
+    <br>
+
+    <textarea name="textArea" placeholder="Put your bio in here."></textarea>
+    <br>
+
+    <input type="checkbox" name=LocatedInTexas"> Do you live in Texas?
+    <br>
+
+    <h2>Quiz</h2>
+    A <input type="radio" name="quiz_question_1" value="loves flowers"><br>
+    B <input type="radio" name="quiz_question_1" value="loves coffee"><br>
+    C <input type="radio" name="quiz_question_1" value="loves cookies"><br>
+    D <input type="radio" name="quiz_question_1" value="loves money"><br>
+
+    <h3>What Coffee do you like?</h3>
+
+    <select name="coffee_preference">
+        <option value="light">Light Roast</option>
+        <option value="dark">Dark Roast</option>
+        <option disabled value="espresso">Espresso Blend</option> <!-- disabled value, greys out the option, as in, "out of stock" -->
+    </select>
+    <br>
+
+    <button type="submit">Submit</button>
 
 </form>
+<br>
 
 </body>
 </html>
