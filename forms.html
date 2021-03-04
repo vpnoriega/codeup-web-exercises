@@ -7,7 +7,44 @@
 <body>
 
 <form method="POST" action="https://request-inspector.glitch.me/">
+    <h3>Hello! Please fill out the form below to register with us:</h3>
+    <p>
+        <strong>Email:</strong>
+        <label for="email">
+            <input id="email" type="email" name="email">
+        </label>
+    </p>
 
+    <p>
+        <strong>Password:</strong>
+        <label for="password">
+            <input id="password" type="password" name="userPassword" placeholder="must be at least 8 characters">
+        </label>
+    </p>
+
+    <strong> Tell us about yourself:</strong>
+    <br>
+    <label for="bio"></label>
+    <textarea id="bio" name="Userbio" placeholder="Put your bio in here."></textarea>
+
+    <p>
+        <label><strong>How did you hear about us?</strong></label><br>
+        <input type="checkbox" name="information gathered" value="billboard">Billboard <br>
+        <input type="checkbox" name="information gathered" value="radio">Radio Advertisement <br>
+        <input type="checkbox" name="information gathered" value="Internet advertisement">Internet Advertisement <br>
+        <input type="checkbox" name="information gathered" value="other">Other <br>
+    </p>
+
+    <label><strong> What browser are you using?</strong></label>
+    <select name="browser type">
+        <option value="chrome">Chrome</option>
+        <option value="Firefox">Firefox</option>
+        <option value="Microsoft Edge">Microsoft Edge</option>
+        <option value="Safari">Safari</option>
+    </select>
+    <p>
+        <button type="submit">Submit</button>
+    </p>
 </form>
 </body>
 </html>
