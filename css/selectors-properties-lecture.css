@@ -1,0 +1,110 @@
+body {
+    background-color: steelblue;
+}
+
+/*#comic {*/
+/*    font-family: "Comic Sans MS"*/
+/*}*/
+
+.comic{
+    font-family: "Comic Sans MS"
+}
+
+/******** MULTIPLE SELECTORS *******/
+
+/*
+selector {
+    property1: value;
+    property2: value;
+}
+*/
+
+/*when it comes to classes, it has to be named in the HTML file first so the CSS can be execute the style*/
+
+p, h1 {
+    font-family: "Comic Sans MS";
+
+}
+
+.blue-heading{
+    color:blue;
+}
+
+.class3 {
+    background-color: red;
+}
+
+.class2 {
+    background-color: palevioletred;
+}
+/* ----- Descendant Selector ---- */
+
+main p {
+    background-color: aqua;
+}
+
+nav a {
+    background-color: limegreen;
+}
+
+/*
+selectorParent>directChild{
+    property: value;
+    }
+ */
+/* this will make the "child element" due this specificity, as in that paragraph is will turn into 50 px, not ALL of the paragraphs. */
+
+section>p{
+    font-size: 30px;
+}
+
+/* ****** Combing Selectors ******
+
+element.aClassName {
+    property: value;
+    }
+*/
+
+p.comic {
+    font-family: "Comic Sans MS";
+}
+
+h3#comic {
+    font-family: "Comic Sans MS";
+    font-size: 50px;
+}
+
+/***** Pseudo Classes *******/
+/* selector:pseudo-class {
+    property1: value;
+    property2: value;
+} */
+
+/* unvisited link (:link) */
+a:link {
+    color:red;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:black;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:blue;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
+}
+
+li:hover{
+    background-color: rebeccapurple;
+}
+
+/*text-decor*/
+h1 {
+    text-decoration: underline overline;
+}
