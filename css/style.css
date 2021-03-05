@@ -1,4 +1,17 @@
-.fancy-header {
-    color: rebeccapurple;
+/*.fancy-header {*/
+/*    color: rebeccapurple;*/
+/*    text-decoration: underline;*/
+/*}*/
+
+h1 {
+    text-align: center;
+}
+
+h1,h2{
+    color: #e70a84;
     text-decoration: underline;
+}
+
+body {
+    background-color: lightgrey;
 }
