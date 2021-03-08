@@ -30,8 +30,6 @@ body{
     background-repeat: no-repeat;
     font-family: "American Typewriter";
     background-attachment: fixed;
-
-
 }
 
 ul,ol,h4{
@@ -57,9 +55,16 @@ a:active {
     color: #e70a84
 }
 th, td {
-    padding: 15px;
+    padding: 10px;
     text-align: left;
     color:#e70a84;
     border-style: double;
     border-color: black;
+}
+
+.position{
+   position: absolute;
+    top: 100%;
+    margin-top: 12px;
+    margin-left: 4px;
 }
