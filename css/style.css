@@ -10,8 +10,56 @@ h1 {
 h1,h2{
     color: #e70a84;
     text-decoration: underline;
+
+}
+p{
+    color: #e70a84;
+    text-align: center;
+
+}
+/*body {*/
+/*    background-color: lightgrey;*/
+/*}*/
+img {
+    border-radius: 8px;
 }
 
-body {
-    background-color: lightgrey;
+body{
+    background-image:url(../images/pexels-oleg-magni.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "American Typewriter";
+    background-attachment: fixed;
+
+
+}
+
+ul,ol,h4{
+    list-style: square;
+    color: #e70a84;
+
+}
+
+a:link {
+    color:dodgerblue;
+    font-weight: bold;
+}
+
+a:visited {
+    color:mediumpurple;
+}
+
+a:hover {
+    color:mediumblue;
+}
+
+a:active {
+    color: #e70a84
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+    color:#e70a84;
+    border-style: double;
+    border-color: black;
 }
