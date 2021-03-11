@@ -89,6 +89,10 @@ a {
     width: calc(25% - .5em);
 }
 
+.container {
+    padding-left: 2em;
+    padding-right: 2em;
+}
 
 .btn {
     border: 1px solid var(--main-link-color);
@@ -117,4 +121,32 @@ a {
 }
 .text-muted {
     color: var(--main-link-color);
+}
+
+.media{
+    width: 100%;
+    background-color: var(--light-bg);
+    border-bottom: 1px var(--separator-color);
+    border-bottom-style: solid;
+    padding: .5em;
+    overflow: auto;
+}
+
+.media-image{
+    width: 50px;
+    margin-top: 1.33em;
+    float: left;
+}
+
+.media-body{
+    width: 100%;
+    calc(100% - 50px);
+}
+
+.profile-items{
+    list-style-type: none;
+}
+
+.profile-entry{
+    margin: .5em;
 }
