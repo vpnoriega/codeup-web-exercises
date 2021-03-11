@@ -30,7 +30,7 @@ a {
     background: var(--light-bg);
     position: fixed;
     width: 100%;
-    z-index: 1000;
+    z-index: 1001;
 }
 
 .nav-item {
@@ -43,14 +43,17 @@ a {
     padding: 0;
     margin: 0;
 }
+
 .nav-link {
     color: var(--main-link-color);
     font-weight: bold;
     text-decoration: none;
 }
+
 .nav-link:hover {
     color: var(--link-color);
 }
+
 .profile {
     background: var(--light-bg);
     height: 80px;
@@ -63,35 +66,31 @@ a {
 
 .profile-details{
     float: left;
-    margin-top: 0em;
-    margin-bottom: 0em;
-    margin-left: .25em;
-    margin-right: .25em;
-    width: calc(25% - .5em);
+    margin: 0 .5em;
+    width: calc(25% - 1em);
 }
+
+.profile-image{
+    position: absolute;
+    top:28%;
+}
+
 
 .timeline{
     float: left;
-    margin-top: 0em;
-    margin-bottom: 0em;
-    margin-left: .25em;
-    margin-right: .25em;
-    width: calc(50% - .5em);
+    margin: 0 .5em;
+    width: calc(50% - 1em);
 
 }
 
 .who-to-follow{
-    float:right;
-    margin-top: 0em;
-    margin-bottom: 0em;
-    margin-left: .25em;
-    margin-right: .25em;
-    width: calc(25% - .5em);
+    float:left;
+    margin: 0 .5em;
+    width: calc(25% - 1em);
 }
 
 .container {
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-top: 2em;
 }
 
 .btn {
@@ -107,10 +106,6 @@ a {
     font-size: 1.3em;
     padding: 10px;
 
-}
-.profile-image{
-    position: absolute;
-    top:28%;
 }
 .img-circle {
     border-radius: 100%;
@@ -133,13 +128,13 @@ a {
 }
 
 .media-image{
-    width: 50px;
+    max-width: 50px;
     margin-top: 1.33em;
     float: left;
 }
 
 .media-body{
-    width: 100%;
+    float:left;
     calc(100% - 50px);
 }
 
