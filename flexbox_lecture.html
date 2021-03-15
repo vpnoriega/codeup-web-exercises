@@ -15,13 +15,13 @@
 
         .flex-container {
             width: 100%;
-            /*height: 100px;*/
+            height: 100px;
             border: 3px solid goldenrod;
             display: flex; /* row will be the default */
 
-            /* **** FLEX DIRECTION **** */
-            /*flex-direction: row-reverse; !* --> will reverse the order of the items, same with                       column-reverse*/
-           /*flex-direction: column; */ /* --> Main axis is vertical and the cross axis is horizontal*/
+           /*  **** FLEX DIRECTION **** */
+           /* flex-direction: row-reverse; !* --> will reverse the order of the items, same with                       column-reverse*/
+           /*flex-direction: column;   --> Main axis is vertical and the cross axis is horizontal*/
 
 
             /* **** JUSTIFY CONTENT *****
@@ -40,16 +40,62 @@
             /*align-items: flex-end;*/
             /*align-items: stretch;*/ /* --> will stretch items across the cross axis' */
             /*align-items: center; height: 5em;*/
+
+
+            /* **** FLEX WRAP ****
+            --> When more items are present than can fit within a flex container of a certain width, the flex-wrap property helps control how these extra items behave */
+
+            /*flex-wrap: wrap;*/
+            /*flex-wrap: wrap-reverse;*/
+
+            /* **** ALIGN CONTENT ****
+            --> When multiple rows or columns of flex items are present, the spacing of these lines of items may be controlled along the cross axis by targeting the align-content property:
+            flex-start, center, flex-end, space evenly */
+
+            flex-wrap: wrap;
+            height: 15em;
+            /*align-content: center;*/
+
+            /* --> The align-content property will have no effect unless the items wrap into multiple rows or columns. align-items may still be used to align items within each individual row/column: (couldn't get this one right) */
+            align-content: space-between;
+            align-items: flex-end;
+
+            /* **** ORDER **** */
+            /* **** ALIGN SELF **** */
+            /* **** FLEX GROW **** */
     }
 
 
 
-    .flex-item {
-        background: #BFD45D;
-        border: 2px solid #F9EFD6;
-        padding: 1em;
-    }
-</style>
+        .flex-item {
+            background: #BFD45D;
+            border: 2px solid #F9EFD6;
+            padding: 1em;
+        }
+ /* **** This is when you have different item sizes but I couldn't figure it out **** */
+        /*.flex-container {*/
+        /*    display: flex;*/
+        /*    align-items: baseline;*/
+        /*    border: 5px solid goldenrod;*/
+        /*    height: 100vh;*/
+        /*}*/
+        /*.box1 {*/
+        /*    font-size: 15px;*/
+        /*}*/
+        /*.box2 {*/
+        /*    font-size: 30px;*/
+        /*}*/
+        /*.box3 {*/
+        /*    font-size: 45px;*/
+        /*}*/
+        /*.box4 {*/
+        /*    font-size: 60px;*/
+        /*}*/
+        /*.box5 {*/
+        /*    font-size: 75px;*/
+        /*}*/
+
+    </style>
 </head>
 <body>
 
@@ -57,6 +103,17 @@
     <div class="flex-item">Item 1</div>
     <div class="flex-item">Item 2</div>
     <div class="flex-item">Item 3</div>
+    <div class="flex-item">Item 4</div>
+    <div class="flex-item">Item 5</div>
+    <div class="flex-item">Item 6</div>
+    <div class="flex-item">Item 7</div>
+    <div class="flex-item">Item 8</div>
+    <div class="flex-item">Item 9</div>
+    <div class="flex-item">Item 10</div>
+    <div class="flex-item">Item 11</div>
+    <div class="flex-item">Item 12</div>
+    <div class="flex-item">Item 13</div>
+    <div class="flex-item">Item 14</div>
 </div>
 
 </body>
