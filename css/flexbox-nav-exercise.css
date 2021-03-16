@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    background: grey;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-family: Montserrat;
+    display: inline-block;
+    padding: 1em; /*this will adjust the size of the clickable area */
+}
+
+nav a:hover {
+    background: blue;
+}
+
+nav ul li:nth-child(5) {
+    margin-left: auto;
+}
+
+#logo{
+    font-size: 3em;
+    /*position: absolute;*/
+    padding: .2em 0 .2em 0;
+
+}
+
+#search-icon{
+    color: black;
+}
