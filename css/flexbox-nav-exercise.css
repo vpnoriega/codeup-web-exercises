@@ -26,13 +26,13 @@ ul {
 nav a {
     text-decoration: none;
     color: black;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     display: inline-block;
     padding: 1em; /*this will adjust the size of the clickable area */
 }
 
-nav a:hover {
-    background: blue;
+a:hover {
+    color: blue;
 }
 
 nav ul li:nth-child(5) {
@@ -40,9 +40,10 @@ nav ul li:nth-child(5) {
 }
 
 #logo{
-    font-size: 3em;
+    font-size: 1.5em;
     /*position: absolute;*/
     padding: .2em 0 .2em 0;
+    margin: auto;
 
 }
 
