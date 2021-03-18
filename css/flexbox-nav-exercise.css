@@ -8,10 +8,11 @@ body {
 
 nav {
     display: flex;
-    background: grey;
+    background: lightgrey;
     margin: 0;
     padding: 0;
-    position: relative;
+    /*position: relative;*/
+    justify-content: space-between;
 
 }
 
@@ -33,6 +34,7 @@ nav a {
 
 a:hover {
     color: blue;
+    background-color: darkgrey;
 }
 
 nav ul li:nth-child(5) {
@@ -42,11 +44,13 @@ nav ul li:nth-child(5) {
 #logo{
     font-size: 1.5em;
     /*position: absolute;*/
-    padding: .2em 0 .2em 0;
+    padding: .2em 0;
     margin: auto;
-
+    font-family: Work Sans, sans-serif;
 }
+
 
 #search-icon{
     color: black;
+
 }
