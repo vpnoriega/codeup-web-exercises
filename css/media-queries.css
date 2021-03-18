@@ -1,0 +1,12 @@
+/* screen sizes 500px and up */
+@media screen and (min-width:500px) {
+    nav{
+        display: flex;
+        background: lightgrey;
+
+    }
+}
+
+img{
+    display: flex;
+}
