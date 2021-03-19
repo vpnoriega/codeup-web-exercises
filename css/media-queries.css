@@ -1,12 +1,87 @@
-/* screen sizes 500px and up */
-@media screen and (min-width:500px) {
-    nav{
-        display: flex;
-        background: lightgrey;
+/*
+TODO: Skip to main, needs border, top, BG.
+ Large flex? Nested Containers?
+ LInks: BG color, spacing,
+ IMG: get the random placeholder img,
+*/
 
-    }
+* {
+    box-sizing: border-box;
+    /*margin: 1em; --> Ken did this to his body*/
+    padding: 0;
+    flex-direction: column;
+    font-family: sans-serif;
 }
 
-img{
+.alert-info a{
     display: flex;
+    background-color: #beffff;
+    border: solid lightgrey;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    margin: 1em;
+    font-size: 1em;
+
 }
+
+h1 {
+    text-align: center;
+    margin: 1em;
+    font-size: 2.5em;
+}
+
+.nav-links{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 1em .5em;
+    padding: 0em;
+    font-size: 1em;
+
+}
+
+.nav-links li {
+    text-align: center;
+    background-color: lightgrey;
+    padding: .5em 0;
+    margin: .5em;
+}
+
+.header-img{
+    text-align: center;
+    margin: .5em;
+}
+
+img {
+    height: 224px;
+    width: 345px;
+}
+
+/*@media screen and (min-width:500px) {*/
+/*    nav ul{*/
+/*        display: flex;*/
+/*        background: lightgrey;*/
+/*        list-style: none;*/
+/*    }*/
+
+/*    li{*/
+/*        margin-left: auto;*/
+/*        justify-items: flex-end;*/
+/*    }*/
+
+/*    img{*/
+/*        display: flex;*/
+/*    }*/
+
+/*    #main {*/
+/*        display: flex;*/
+/*    }*/
+
+/*    .sub-section{*/
+/*        display: flex;*/
+/*    }*/
+
+/*}*/
