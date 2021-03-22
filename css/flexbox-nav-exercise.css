@@ -9,8 +9,11 @@ body {
 nav {
     display: flex;
     background: lightgrey;
-    margin: 0;
-    padding: 0;
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*
+    Why didn't I need margin and padding?
+     */
     /*position: relative;*/
     justify-content: space-between;
 
@@ -21,7 +24,6 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 100%;
 }
 
 nav a {
@@ -36,6 +38,9 @@ a:hover {
     color: blue;
     background-color: darkgrey;
 }
+
+/* Here is where my code differs from Douglas' and I don't understand why...
+*/
 
 nav ul li:nth-child(5) {
     margin-left: auto;
