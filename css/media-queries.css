@@ -7,8 +7,11 @@ TODO: Skip to main, needs border, top, BG.
 
 * {
     box-sizing: border-box;
-    /*margin: 1em; --> Ken did this to his body*/
-    padding: 0;
+}
+
+body{
+    display: flex;
+    margin: 1em; /*--> Ken did this to his body*/
     flex-direction: column;
     font-family: sans-serif;
 }
@@ -17,71 +20,93 @@ TODO: Skip to main, needs border, top, BG.
     display: flex;
     background-color: #beffff;
     border: solid lightgrey;
-    height: 60px;
+    width: 100%;
+    height: 3.5em;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     color: black;
-    margin: 1em;
-    font-size: 1em;
-
 }
 
 h1 {
-    text-align: center;
-    margin: 1em;
-    font-size: 2.5em;
+    margin: .2em auto .5em auto;
+    font-size: 3em;
 }
 
 .nav-links{
     display: flex;
     flex-direction: column;
     list-style: none;
-    margin: 1em .5em;
-    padding: 0em;
-    font-size: 1em;
-
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links li {
-    text-align: center;
+    display: flex;
     background-color: lightgrey;
-    padding: .5em 0;
-    margin: .5em;
+    width: 100%;
+    height: 3.5em;
+    margin-bottom: .7em; /*This is causing the separation between the links (the white space)*/
+}
+
+.nav-links a {
+    margin: auto; /*this is causing the links to be in the center of the box, not sure why though */
 }
 
 .header-img{
-    text-align: center;
-    margin: .5em;
+    width: 100%;
 }
 
 img {
-    height: 224px;
-    width: 345px;
+    width: 100%; /*why is it necessary to have both the class and the selector? When I remove the class in the inspector, I don't see a difference*/
 }
 
-/*@media screen and (min-width:500px) {*/
-/*    nav ul{*/
-/*        display: flex;*/
-/*        background: lightgrey;*/
-/*        list-style: none;*/
-/*    }*/
+.sub-section h2 {
+    font-size: 1.25em;
+}
 
-/*    li{*/
-/*        margin-left: auto;*/
-/*        justify-items: flex-end;*/
-/*    }*/
+.sub-section {
+    font-style: italic;
+}
 
-/*    img{*/
-/*        display: flex;*/
-/*    }*/
+footer {
+    margin-top: 4em;
+}
 
-/*    #main {*/
-/*        display: flex;*/
-/*    }*/
+@media screen and (min-width: 768px){
+    body {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 
-/*    .sub-section{*/
-/*        display: flex;*/
-/*    }*/
+    .hidden-on-desktop {
+        display: none;
+    }
 
-/*}*/
+    h1 {
+        margin: .2em auto .5em 0;
+        font-size: 2.5em;
+    }
+    .nav-links {
+        flex-direction: row;
+    }
+
+    .nav-links li {
+        background: none;
+        margin: 0 .75em;
+    }
+
+    section p {
+        padding-right: 1em;
+    }
+
+    .main {
+        flex-basis: 60%;
+    }
+
+    .sub-section {
+        flex-basis: 40%;
+    }
+
+
+}
