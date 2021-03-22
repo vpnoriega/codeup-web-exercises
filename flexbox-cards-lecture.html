@@ -6,12 +6,98 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/33e7696cf9.js" crossorigin="anonymous"></script>
 
-    <h1>Staff</h1>
+    <style>
+        body {
+            /*margin: 0;*/
+            font-family: Roboto;
+            background: orange;
+        }
+
+        h1, h2, h3 {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        h3 {
+            color: grey;
+        }
+
+        hr {
+            border-top: 1px solid whitesmoke;
+            width: 90px;
+        }
+
+        .card {
+            margin: .5em;
+            border-radius: 2px;
+            background: white;
+            width: 250px;
+            height: 350px;
+            /* the following declarations make the card a flex container and justify and align its flex items */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        img {
+            border-radius: 120px;
+            width: 120px;
+        }
+
+        i {
+            color: grey;
+        }
+
+        .icons {
+            /* the following declarations control the spacing between the social media icons */
+            width: 160px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .text-section {
+            position: relative;
+            bottom: 1.5em;
+        }
+
+        .icons i {
+            font-size: 2.2em;
+        }
+
+        .boundary {
+            display: flex;
+            background: darkorange;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 80%;
+            max-height: 100%;
+        }
+
+        .card-grid {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 1em;
+        }
+
+        /* I am confused on the difference between the boundary and the card grid (use inspector) */
+        .title {
+            font-weight: bold;
+        }
+    </style>
+
 </head>
 
 <body>
-<div class="padding-boundary">
 <div class="boundary">
+    <header>
+        <h1 class="title">Staff</h1>
+    </header>
+        <div class="card-grid">
     <article class="card">
         <section>
             <img src="images/profile.png" alt="profile-image">
@@ -110,83 +196,4 @@
 </div>
 </div>
 </body>
-
-<style>
-    body {
-        /*margin: 0;*/
-        font-family: Roboto;
-        background: orange;
-    }
-
-    h1, h2, h3 {
-        padding: 0;
-        margin: 0;
-        text-align: center;
-    }
-
-    h3 {
-        color: grey;
-    }
-
-    hr {
-        border-top: 1px solid whitesmoke;
-        width: 90px;
-    }
-
-    .card {
-        margin: .5em;
-        border-radius: 2px;
-        background: white;
-        width: 250px;
-        height: 350px;
-        /* the following declarations make the card a flex container and justify and align its flex items */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-    }
-
-    img {
-        border-radius: 120px;
-        width: 120px;
-    }
-
-    i {
-        color: grey;
-    }
-
-    .icons {
-        /* the following declarations control the spacing between the social media icons */
-        width: 160px;
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    .text-section {
-        position: relative;
-        bottom: 1.5em;
-    }
-
-    .icons i {
-        font-size: 2.2em;
-    }
-
-    .boundary {
-        display: flex;
-        background: darkorange;
-        flex-flow: row wrap;
-        justify-content: space-evenly;
-        margin: 0 auto;
-        max-width: 80%;
-        max-height: 100%;
-        padding: 5vw;
-    }
-
-    .padding-boundary{
-        background-color: orange;
-        padding: 0 7em 0 7em;
-    }
-
-</style>
-
 </html>
