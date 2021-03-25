@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap-grid-lecture.css">
+    <title>Bootstrap Grid Lecture</title>
+</head>
+<body>
+<h3 class="text-center mt-3"> Setting up our first container w/empty rows</h3>
+<div class="container">
+    <div class="row">
+    </div>
+</div>
+
+<h3 class="text-center mt-3"> Let's set up our first few interior columns</h3>
+<div class="container">
+    <div class="row">
+        <div class="col">One of two</div>
+        <div class="col">Two of three</div>
+        <div class="col">Three of three</div>
+    </div>
+    <div class="row">
+        <div class="col">One of one</div>
+    </div>
+</div>
+
+<!-- let's get specific-->
+
+<h3 class="text-center mt-3">More specific columns</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-3">One of two</div>
+        <div class="col-9">Two of two</div>
+    </div>
+
+<div class="row">
+    <div class="col-3">One of four</div>
+    <div class="col-3">two of four</div>
+    <div class="col-3">three of four</div>
+    <div class="col-3">four of four</div>
+</div>
+</div>
+
+<!-- Let's look at responsiveness! -->
+<h3 class="text-center mt-3">Specific Columns - AND Specific screen size settings!</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-med-6 col-lg-8">One of two</div>
+            <div class="col-sm-8 col-med-6 col-lg-4">two of two</div>
+        </div>
+
+        <div class="row">
+            <div class="col">One automatic col</div>
+        </div>
+    </div>
+
+<!-- What about not using all of the column space? -->
+<h3 class="text-center mt-3">Columns with White space</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-4">One of two</div>
+        <div class="col-4">Two of two</div>
+    </div>
+
+    <div class="row">
+        <div class="col-8">Automatic Column</div>
+    </div>
+</div>
+
+<!-- What about other flex properties?-->
+
+<h3 class="text-center">Flexing in Different Ways</h3>
+
+<div class="container">
+    <div class="row tall-row justify-content-center align-items-center">
+        <div class="col-4">One of two</div>
+        <div class="col-4">Two of two</div>
+    </div>
+    <div class="row tall-row">
+        <div class="col"></div>
+    </div>
+</div>
+
+<h3 class="text-center mt-3">Vertical alignment</h3>
+< class="container">
+    <div class="row tall-row align-items-start">
+    <div class="col-4">One of three</div>
+    <div class="col-4">Two of three</div>
+    <div class="col-4">Three of three</div>
+</div>
+
+<div class="row">
+<div class="col">One of one</div>
+</div>
+    <h3 class="text-center">Using Offset to Push</h3>
+
+    <div class="container">
+        <div class="row tall-row align-items-center">
+            <div class="col-4">One of two</div>
+            <div class="col-4 offset-4">Two of two</div>
+        </div>
+        <div class="row">
+            <div class="col">One of two</div>
+        </div>
+    </div>
+
+    <h3 class="text-center">Using Order to Specify a Position</h3>
+
+    <div class="container mb-4">
+        <div class="row tall-row align-items-center justify-content-between">
+            <div class="col-4 ">One of two</div>
+            <div class="col-4 order-first">Two of two</div>
+        </div>
+        <div class="row">
+            <div class="col order-11">One of Four</div>
+            <div class="col order-12">Two of Four</div>
+            <div class="col order-4">Three of Four</div>
+            <div class="col order-3">Four of Four</div>
+        </div>
+    </div>
+
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+</body>
+</html>
