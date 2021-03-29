@@ -1,143 +1,82 @@
+//i. locating in the DOM
 
-<!DOCTYPE html>
-<html lang="en" class="h-100">
+// TODO: Find an element by the id of "hat-search". Store the result into a variable. Use a console log to check what is in your variable.
 
-<head>
-    <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <title>The Haberdashery</title>
-            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+var hatSearch=document.getElementById("hat-search");
+console.log(hatSearch);
 
-                <!--    BS CSS-->
-                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
-                        <!-- Any custom CSS below here-->
-                        <style>
-                            .main-content {
-                            background-color: #faebd7;
-                            color: #1B0F1C;
-                        }
+// TODO: Find all of our elements we made flex containers in Bootstrap! Locate the .d-flex class, store all of your results into a variable, and then console.log them.
 
-                            body {
-                            background-color: #DBA97E;
-                        }
-                            #top-header {
-                            background-color: #97719F;
-                            color: antiquewhite;
-                        }
-                        </style>
-
-</head>
-
-<body class="h-100">
+var flexItems = document.getElementsByClassName('.d-flex');
+console.log(flexItems)
 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Howell's <i class="bi-shop mx-1"></i></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+// TODO: Finish my FOR loop to go through that variable containing our d-flex'ed items and console.log each individual one within the loop!
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target="#aboutUsModal" href="#">About Us</a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0" id="hat-search" name="hatSearch">
-            <input class="form-control mr-sm-2" type="search" placeholder="Where's the hat at?">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search for local hats</button>
-        </form>
-    </div>
-</nav>
+for(var i=0 ; i < flexItems.length; i++){
+console.log(flexItems[i])}
 
+// TODO: Find all of our div elements and store them into a variable~! Console.log the variable to see the results within!
 
-<div class="modal fade" id="aboutUsModal" tabindex="-1" aria-labelledby="aboutUsModal" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalTitle">Our Hat-istory</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+var divItems = document.getElementsByTagName('div');
+console.log(divItems)
 
-                <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
+// TODO: Now that we have a variable with all of the elements, can you tell me how many divs are in the HTML using that variable and a little Javascript? Hint: the variable looks and behaves a lot like an array, doesn't it? That helped us in our for loop's condition!
 
+console.log(divItems.length);
 
-<div id="top-header" class="jumbotron jumbotron-fluid border-bottom border-dark">
-    <div class="text-center">
-        <h1>Say hello: to HATS!</h1>
-        <h3 class="lower-header">The hats say hello back!</h3>
-        <h6 class="lower-header">Welcome to our hat page!</h6>
-    </div>
-</div>
+// TODO BONUS (a): Write a function called locateDivs. When locateDivs is called, it should return a collection of the div elements found.
+
+function locateDivs(){
+    return document.getElementsByTagName("div")
+}
+
+// TODO BONUS (b): Write a function called locateElements. locateElements should take in one parameter, the element to be searched for, and then return a collection of those elements. If no elements by that name were found, return false.
+
+function locateElements(element){
+    return document.getElementsByTagName(element)
+}
+
+// ii. a step further: accessing / looking into what we've located deeper
+
+// innerHTML/innerText
+
+// TODO: Howell's doesn't sound like the name you'd give your hat shop - let's change the innerText of that in our navigation bar to your own name.
+
+    var navName = document.getElementsByClassName('navbar-brand');
+    console.log(navName.innerText);
+    navName.innerText = "Noriega's"
+    console.log(navName.innerText)
+
+// TODO: There's only one ordered list on the page - can you get into that ordered list and use innerHTML to change the list items within that ordered list to what you think the top sellers were?
+
+var listItems = document.getElementsByTagName('ol');
+    console.log(listItems.innerHTML);
+    listItems.innerHTML="funny hat, beanie, santa hat";
+console.log(listItems.innerHTML);
+
+// TODO (BONUS): I have two "special-offer" classes used in my table - grab those classes by name, store them into a variable, and then use a loop to replace the innerHTML. The new table data should have strings that let our customers know that "New discounts are coming soon!"
 
 
-<div class="container h-50 main-content border border-primary">
-    <div class="row h-100 m-auto">
 
-        <div class="col-sm-3 d-flex align-items-center justify-content-center">
-            <p>I offer: <span><em>hats,</em><br>hat accessories,<br> <strong>hat opportunities,</strong><br> and hat perspectives.</span></p>
-        </div>
+// attributes
 
-        <div class="col-sm-6 d-flex align-items-center justify-content-center flex-column mt-5 mt-sm-0">
-            <table>
-                <h4>Special Offers</h4>
-                <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                </tr>
-                <tr class="special-offer">
-                    <td>Hat Appraisal</td>
-                    <td>$2.99</td>
-                </tr>
-                <tr class="special-offer">
-                    <td>2020 Fiesta Medals</td>
-                    <td>$11.99</td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="col-sm-3 d-flex flex-column align-items-center justify-content-center mt-5 mt-sm-0">
-            <h4 id="best-seller">Our Top Sellers</h4>
-            <ol>
-                <li class="hat-sold">Baseball hats</li>
-                <li class="hat-sold">Fedora hats</li>
-                <li class="hat-sold">Cowboy hats</li>
-            </ol>
-        </div>
-
-    </div>
-</div>
-
-<footer class="text-center fixed-bottom bg-dark p-1">
-    <div class="container">
-        <a href="https://www.google.com" id="bottom-link">
-            <h6 class="mb-0">Hats?? Nope! Get me out of here!</h6>
-        </a>
-    </div>
-</footer>
+// TODO: Bringing in Bootstrap components, sometimes we can forget to change example or demo related text - one of my ids in the HTML is set to "navbarTogglerDemo02". I don't think we need that ID at all, can you remove that attribute for me? Start by storing it in a variable!
 
 
-<!-- Bootstrap JS-->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<!-- Any custom JS underneath here-->
 
-</body>
+// TODO: Uh oh - actually there was a BUTTON that referred to 'navbarTogglerDemo02' that is right above it in our HTML structure! Let's add an ID back to the variable you used above that makes more sense (perhaps "navbar-collapser"?)
 
-</html>
+
+
+// TODO: Now, get into that button element that makes reference to our old "navbarTogglerDemo02" ids and change those attributes to match. Refactor complete!
+
+
+
+// style
+
+// TODO: I've embedded a style sheet that adjusts color for the body, a class called "main-content", and an ID of "top-header". Target the three of these elements and set your own colors as you'd like to each of the three I've mentioned.
+
+
+
+// TODO (BONUS): That default bootstrap font is nice, but we've been adding our own fonts to thing for a couple of weeks now! Add a font-family of some kind that you'd like it to adjust to.
