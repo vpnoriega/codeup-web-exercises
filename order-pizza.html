@@ -67,36 +67,62 @@
         <a class="nav-link" id="toppings-tab" data-toggle="tab" href="#toppings" role="tab" aria-controls="toppings" aria-selected="false"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>
     </li>
 </ul>
+
     <!--PANELS -->
     <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="size" role="tabpanel" aria-labelledby="size-tab">
-            <div class="card">
-                <div class="card-header">
-                    Choose Size and Crust
-                </div>
-                <div class="card-body">
-                    <div class="card">
-                        <div class="card-header">
-                            Hand Tossed
+        <form action="" method="post">
+
+            <!-- TAB PANE 1 -->
+            <div class="tab-pane fade show active" id="size" role="tabpanel" aria-labelledby="size-tab">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        Choose Size and Crust
+                    </div>
+                    <div class="card-body">
+                        <div class="card">
+                            <div class="card-header">
+                                Hand Tossed
+                            </div>
+                            <div class="card-body">
+                                Garlic seasoned crust with a rich, buttery taste.
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <label for = "small10">Small (10")</label>
+                                    <input type="radio" name="small10" id="small10">
+                                </li>
+                                <li class="list-group-item">Medium (12")</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                Crispy Thin
+                            </div>
+                            <div class="card-body">
+                                Thin enough for optimum crispy to crunchy ratio.
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item">Medium (12")</li>
+                                <li class="list-group-item">Large (14")</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            Crispy Thin
-                        </div>
+                    <div class="card-footer d-flex justify-content-end">
+                        <button class="btn btn-primary">Next Step ></button>
                     </div>
-                </div>
-                <div class="card-footer">
-                    <button>Next Step ></button>
                 </div>
             </div>
-        </div>
-        <div class="tab-pane fade" id="cheese" role="tabpanel" aria-labelledby="cheese-tab">
-            <h2>Panel 2</h2>
-        </div>
-        <div class="tab-pane fade" id="toppings" role="tabpanel" aria-labelledby="toppings-tab">
-            <h2>Panel 3</h2>
-        </div>
+
+            <!-- TAB PANE 2 -->
+            <div class="tab-pane fade" id="cheese" role="tabpanel" aria-labelledby="cheese-tab">
+                <h2>Panel 2</h2>
+            </div>
+
+            <!-- TAB PANE 3 -->
+            <div class="tab-pane fade" id="toppings" role="tabpanel" aria-labelledby="toppings-tab">
+                <h2>Panel 3</h2>
+            </div>
+        </form>
     </div>
 
 </main>
