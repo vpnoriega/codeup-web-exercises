@@ -79,7 +79,7 @@
                         Choose Size and Crust
                     </div>
                     <div class="card-body">
-                        <div class="card">
+                        <div class="card mb-3">
                             <div class="card-header">
                                 Hand Tossed
                             </div>
@@ -88,32 +88,40 @@
                             </div>
                             <ul class="list-group">
                                 <li class="list-group-item">
-                                    <label for = "small10">Small (10")</label>
-                                    <input type="radio" name="small10" id="small10">
+                                    <input type="radio" name="crust" id="hand-sm">
+                                    <label for="hand-sm">Small (10")</label>
                                 </li>
-                                <li class="list-group-item">Medium (12")</li>
+                                <li class="list-group-item">
+                                    <input type="radio" name="crust" id="hand-med">
+                                    <label for="hand-med">Medium (12")</label>
+                                </li>
                             </ul>
                         </div>
                         <div class="card">
-                            <div class="card-header">
-                                Crispy Thin
-                            </div>
-                            <div class="card-body">
-                                Thin enough for optimum crispy to crunchy ratio.
-                            </div>
-                            <ul class="list-group">
-                                <li class="list-group-item">Medium (12")</li>
-                                <li class="list-group-item">Large (14")</li>
-                            </ul>
+                                    <div class="card-header">
+                                        Crispy Thin
+                                    </div>
+                                    <div class="card-body">
+                                        Thin enough for optimum crispy to crunchy ratio.
+                                    </div>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <input type="radio" name="crust" id="thin-med">
+                                            <label for="thin-med">Medium (12")</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input type="radio" name="crust" id="thin-lg">
+                                            <label for="thin-lg">Large (14")</label>
+                                        </li>
+                                    </ul>
+                        </div>
+                        <div class="card-footer d-flex justify-content-end">
+                            <button class="btn btn-primary">Next Step ></button>
                         </div>
                     </div>
-                    <div class="card-footer d-flex justify-content-end">
-                        <button class="btn btn-primary">Next Step ></button>
-                    </div>
                 </div>
-            </div>
 
-            <!-- TAB PANE 2 -->
+                <!-- TAB PANE 2 -->
             <div class="tab-pane fade" id="cheese" role="tabpanel" aria-labelledby="cheese-tab">
                 <h2>Panel 2</h2>
             </div>
@@ -121,6 +129,7 @@
             <!-- TAB PANE 3 -->
             <div class="tab-pane fade" id="toppings" role="tabpanel" aria-labelledby="toppings-tab">
                 <h2>Panel 3</h2>
+            </div>
             </div>
         </form>
     </div>
