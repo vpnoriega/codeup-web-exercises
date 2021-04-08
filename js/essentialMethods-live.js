@@ -5,16 +5,19 @@
 
 //TODO: Let's get the HTML from the element with the ID of "best-seller-cont"
 
-console.log($("#best-seller-cont").html()); //get the html at this ID)
+console.log($("#best-seller-cont").html()); //get the html at this ID
 
 //TODO together: Let's set up a string with HTML to replace this old list with our updated best sellers - FEDORAS have moved into the number one spot!
 
 var html = ""; //create a box to store the new contents, but dont NEED it
 html = "<h4 class='best-seller-header'>Our Top Sellers</h4><ol><li class='hat-sold'>Fedora Hat</li><li class='hat-sold'>Baseball Hat</li><li class='hat-sold'>Cowboy Hat</li></ol>"
+//set up the variable with the contents you need to update
 
 //TODO: Now, let's get back into that "best-seller-cont" and replace that HTML!
 
-$("#best-seller-cont").html(html) // empty pars will GET the element, contents inside will be the REPLACEMENT. In this case, it's the var HTML created above
+$("#best-seller-cont").html(html)
+
+// empty pars will GET the element, contents inside will be the REPLACEMENT. In this case, it's the var HTML created above
 
 //TODO Together: Can we make a click event that changes "Howell's" to "Marco's" when we click on it? Help me out!
 //identify where "howell's" is, in this case the class
@@ -22,7 +25,7 @@ $("#best-seller-cont").html(html) // empty pars will GET the element, contents i
 //what are you replacing, and how? This, and value
 
 $(".navbar-brand").click(function(){
-    $(this).html("Marco's");
+    $(this).html("Marco's <i class=\"bi-shop mx-1\"></i>");
 })
 
 
