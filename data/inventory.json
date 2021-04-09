@@ -30,5 +30,20 @@
     "tool"
   ],
   "price": 10
+},
+  {
+  "title": "Handsaw",
+  "quantity": 10,
+  "categories": [
+    "tool"
+  ],
+  "price": 25
+}, {
+  "title": "Pliers",
+  "quantity": 5,
+  "categories": [
+    "tool"
+  ],
+  "price": 20
 }
 ]
