@@ -16,9 +16,10 @@
         keys.push(e.key)
         if(keys.length>11){
             keys.shift();
+            alert('THIS PASSWORD IS INCORRECT!!')
         }
-        if(password.toString() === keys.toString()){
-            $("body").html("CONGRATULATIONS!! YOU HAVE BEEN GRANTED 30 LIVES!")
+        if(password.toString().toLowerCase() === keys.toString().toLowerCase()){
+            $("body").html("CONGRATULATIONS!! YOU HAVE BEEN GRANTED 30 LIVES!");
         }
         // keys = keys + e.key;
         console.log('a ' + e.key + ' key was released!');
