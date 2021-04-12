@@ -12,7 +12,7 @@
 
   <div id='map' style='width: 400px; height: 300px;'></div>
   <script src = "js/keys.js"></script>
-<!--  <script src="js/mapbox-geocoder-utils.js"></script>-->
+  <script src="js/mapbox-geocoder-utils.js"></script>
   <script>
     mapboxgl.accessToken = mapExerciseToken;
 
@@ -20,9 +20,63 @@
       container: 'map', // container ID
       style: 'mapbox://styles/mapbox/streets-v11', // style URL
       center: [-98.4861, 29.4252], // starting position [lng, lat]
-      zoom: 9 // starting zoom
+      zoom: 10 // starting zoom
     };
     var map = new mapboxgl.Map(mapOptions)
+
+// Eddie V's Restaurant:
+
+    geocode("1834 N Loop 1604 W, San Antonio, TX 78248", mapExerciseToken).then(function (results){
+        console.log(results);
+        map.setCenter(results)
+    })
+
+    var eddieVsMarker = new mapboxgl.Marker({color: 'limegreen'})
+        .setLngLat([-98.5218, 29.6079])
+        .addTo(map)
+
+    var eddieVsPopup = new mapboxgl.Popup()
+        .setLngLat([-98.5218, 29.6079])
+        .setHTML("<h3>Best Oysters in Town!</h3>")
+        .addTo(map)
+
+    eddieVsMarker.setPopup(eddieVsPopup)
+
+    // KungFu Noodle
+
+    geocode("6733 Bandera Rd, Leon Valley, TX 78238", mapExerciseToken).then(function (results){
+        console.log(results);
+        map.setCenter(results)
+    })
+
+    var kungfuNoodleMarker = new mapboxgl.Marker({color: 'red'})
+        .setLngLat([-98.6186, 29.4958])
+        .addTo(map)
+
+    var kungfuNoodlePopup = new mapboxgl.Popup()
+        .setLngLat([-98.6186, 29.4958])
+        .setHTML("<h3>Try the Lamb Noodles!</h3>")
+        .addTo(map)
+
+    kungfuNoodleMarker.setPopup(kungfuNoodlePopup)
+
+    // La Sorrentina Italian Restaurant
+
+    geocode("6733 Bandera Rd, Leon Valley, TX 78238", mapExerciseToken).then(function (results){
+        console.log(results);
+        map.setCenter(results)
+    })
+
+    var laSorrentinaMarker = new mapboxgl.Marker({color: 'orange'})
+        .setLngLat([-98.5664, 29.4486])
+        .addTo(map)
+
+    var laSorrentinaPopup = new mapboxgl.Popup()
+        .setLngLat([-98.5664, 29.4486])
+        .setHTML("<h3>#1 Italian Restaurant in SA!</h3>")
+        .addTo(map)
+
+    laSorrentinaMarker.setPopup(laSorrentinaPopup)
 
   </script>
 </body>
