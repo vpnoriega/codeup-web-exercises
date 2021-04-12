@@ -19,7 +19,7 @@
     var mapOptions ={
       container: 'map', // container ID
       style: 'mapbox://styles/mapbox/streets-v11', // style URL
-      center: [-98.4861, 29.4252], // starting position [lng, lat]
+      center: [-98.55, 29.5], // starting position [lng, lat]
       zoom: 9 // starting zoom
     };
 
@@ -48,11 +48,12 @@
     };
 
 
+
     addressArray.forEach(function (element, index){
         geocode(element.address, mapExerciseToken).then(function(result){
             var popup = new mapboxgl.Popup()
                 .setText(element.name)
-                .addTo(map);
+                // .addTo(map); // this is what allows it to not popup immediately
             var marker = new mapboxgl.Marker(markerOptions)
                 .setLngLat(result)
                 .togglePopup()
