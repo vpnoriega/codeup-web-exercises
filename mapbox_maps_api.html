@@ -20,63 +20,103 @@
       container: 'map', // container ID
       style: 'mapbox://styles/mapbox/streets-v11', // style URL
       center: [-98.4861, 29.4252], // starting position [lng, lat]
-      zoom: 10 // starting zoom
+      zoom: 9 // starting zoom
     };
+
     var map = new mapboxgl.Map(mapOptions)
 
-// Eddie V's Restaurant:
 
-    geocode("1834 N Loop 1604 W, San Antonio, TX 78248", mapExerciseToken).then(function (results){
-        console.log(results);
-        map.setCenter(results)
-    })
+// For Each Loop:
+    var addressArray = [
+        {
+            name: "Eddie V's Prime Seafood",
+            address: "1834 N Loop 1604 W, San Antonio, TX 78248"
+        },
+        {
+            name: "Kungfu Noodle",
+            address: "6733 Bandera Rd, Leon Valley, TX 78238"
+        },
+        {
+            name: "La Sorrentina Italian Restaurant",
+            address: "3330 Culebra Rd, San Antonio, TX 78228"
+        }
+    ];
 
-    var eddieVsMarker = new mapboxgl.Marker({color: 'limegreen'})
-        .setLngLat([-98.5218, 29.6079])
-        .addTo(map)
+    var markerOptions = {
+        color: "red",
+        draggable: true
+    };
 
-    var eddieVsPopup = new mapboxgl.Popup()
-        .setLngLat([-98.5218, 29.6079])
-        .setHTML("<h3>Best Oysters in Town!</h3>")
-        .addTo(map)
 
-    eddieVsMarker.setPopup(eddieVsPopup)
+    addressArray.forEach(function (element, index){
+        geocode(element.address, mapExerciseToken).then(function(result){
+            var popup = new mapboxgl.Popup()
+                .setText(element.name)
+                .addTo(map);
+            var marker = new mapboxgl.Marker(markerOptions)
+                .setLngLat(result)
+                .togglePopup()
+                .addTo(map)
+                .setPopup(popup);
+            console.log("This is the index of: " + index + ".");
+        });
+    });
 
-    // KungFu Noodle
+    /** Geocoding Each Individual Restaurant: **/
 
-    geocode("6733 Bandera Rd, Leon Valley, TX 78238", mapExerciseToken).then(function (results){
-        console.log(results);
-        map.setCenter(results)
-    })
-
-    var kungfuNoodleMarker = new mapboxgl.Marker({color: 'red'})
-        .setLngLat([-98.6186, 29.4958])
-        .addTo(map)
-
-    var kungfuNoodlePopup = new mapboxgl.Popup()
-        .setLngLat([-98.6186, 29.4958])
-        .setHTML("<h3>Try the Lamb Noodles!</h3>")
-        .addTo(map)
-
-    kungfuNoodleMarker.setPopup(kungfuNoodlePopup)
-
-    // La Sorrentina Italian Restaurant
-
-    geocode("6733 Bandera Rd, Leon Valley, TX 78238", mapExerciseToken).then(function (results){
-        console.log(results);
-        map.setCenter(results)
-    })
-
-    var laSorrentinaMarker = new mapboxgl.Marker({color: 'orange'})
-        .setLngLat([-98.5664, 29.4486])
-        .addTo(map)
-
-    var laSorrentinaPopup = new mapboxgl.Popup()
-        .setLngLat([-98.5664, 29.4486])
-        .setHTML("<h3>#1 Italian Restaurant in SA!</h3>")
-        .addTo(map)
-
-    laSorrentinaMarker.setPopup(laSorrentinaPopup)
+    // // Eddie V's Restaurant:
+    //
+    //     geocode("1834 N Loop 1604 W, San Antonio, TX 78248", mapExerciseToken).then(function (results){
+    //         console.log(results);
+    //         map.setCenter(results)
+    //     })
+    //
+    //     var eddieVsMarker = new mapboxgl.Marker({color: 'limegreen'})
+    //         .setLngLat([-98.5218, 29.6079])
+    //         .addTo(map)
+    //
+    //     var eddieVsPopup = new mapboxgl.Popup()
+    //         .setLngLat([-98.5218, 29.6079])
+    //         .setHTML("<h3>Best Oysters in Town!</h3>")
+    //         .addTo(map)
+    //
+    //     eddieVsMarker.setPopup(eddieVsPopup)
+    //
+    //     // KungFu Noodle
+    //
+    //     geocode("6733 Bandera Rd, Leon Valley, TX 78238", mapExerciseToken).then(function (results){
+    //         console.log(results);
+    //         map.setCenter(results)
+    //     })
+    //
+    //     var kungfuNoodleMarker = new mapboxgl.Marker({color: 'red'})
+    //         .setLngLat([-98.6186, 29.4958])
+    //         .addTo(map)
+    //
+    //     var kungfuNoodlePopup = new mapboxgl.Popup()
+    //         .setLngLat([-98.6186, 29.4958])
+    //         .setHTML("<h3>Try the Lamb Noodles!</h3>")
+    //         .addTo(map)
+    //
+    //     kungfuNoodleMarker.setPopup(kungfuNoodlePopup)
+    //
+    //     // La Sorrentina Italian Restaurant
+    //
+    //     geocode("3330 Culebra Rd, San Antonio, TX 78228", mapExerciseToken).then(function (results){
+    //         console.log(results);
+    //         map.setCenter(results)
+    //     })
+    //
+    //     var laSorrentinaMarker = new mapboxgl.Marker({color: 'orange'})
+    //         .setLngLat([-98.5664, 29.4486])
+    //         .addTo(map)
+    //
+    //     var laSorrentinaPopup = new mapboxgl.Popup()
+    //         .setLngLat([-98.5664, 29.4486])
+    //         .setHTML("<h3>#1 Italian Restaurant in SA!</h3>")
+    //         .addTo(map)
+    //
+    //     laSorrentinaMarker.setPopup(laSorrentinaPopup)
 
   </script>
 </body>
