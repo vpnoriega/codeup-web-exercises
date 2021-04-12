@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Maps Exercise</title>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+
+<body>
+
+  <div id='map' style='width: 400px; height: 300px;'></div>
+  <script src = "js/keys.js"></script>
+<!--  <script src="js/mapbox-geocoder-utils.js"></script>-->
+  <script>
+    mapboxgl.accessToken = mapExerciseToken;
+
+    var mapOptions ={
+      container: 'map', // container ID
+      style: 'mapbox://styles/mapbox/streets-v11', // style URL
+      center: [-98.4861, 29.4252], // starting position [lng, lat]
+      zoom: 9 // starting zoom
+    };
+    var map = new mapboxgl.Map(mapOptions)
+
+  </script>
+</body>
+</html>
