@@ -11,23 +11,30 @@
 
     <!-- Custom CSS -->
 
-    <title>Weather Map Project</title>
+    <title>Weather Map Lecture</title>
 </head>
 <body>
 
 <h1>Weather Map Project</h1>
-
-
+<!--<div id='map' style='width: 400px; height: 300px;'></div>-->
+<div class = "container w-25 m-0">
+<article class = "d-flex flex-column border solid">
+    <p class = "current-weather"></p>
+    <p class = "real-feel"></p>
+    <p class = "humidity"></p>
+    <p class = "pressure"></p>
+</article>
+</div>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+
 <script src="js/keys.js"></script>
 
 <script>
@@ -35,31 +42,42 @@
 
         "use strict";
 
-
         // GET REQUEST to OpenWeatherMap using city parameter
         // https://openweathermap.org/current
 
-        // $.get("https://api.openweathermap.org/data/2.5/weather", {
-        //   q:"San Antonio, US",
-        // appid: weatherDefault,
-        //   units: "imperial"
-        // }).done(function(results){
-        //   console.log(results);
-        // });
+        $.get("https://api.openweathermap.org/data/2.5/weather", {
+          q:"San Antonio, US",
+        appid: weatherDefault,
+          units: "imperial"
+        }).done(function(results){
+            var currentWeather = results.main;
+          console.log(results);
+            console.log(currentWeather);
+            $('.current-weather').html('San Antonio\'s Weather Today: ' + currentWeather.temp + ' F');
+            $('.real-feel').html('The Real Feel: ' + currentWeather.feels_like + ' F');
+            $('.humidity').html('The humidity is at: ' + currentWeather.humidity + '%');
+            $('.pressure').html('The Pressure is at: ' + currentWeather.pressure);
 
+        });
+
+
+
+        //TODO: How can we incorporate mapbox with this? How can we make it dynamic?
+
+        // TODO: Explore the docs... what endpoint can we use to get a forecast?
 
         // TODO: What parameter can we include in order to get the daily forecast only
 
-        $.get('http://api.openweathermap.org/data/2.5/weather',{
-            appid: weatherDefault,
-            lat:29.423017,
-            lon:-98.48527,
-            units: 'imperial',
-            exclude:"current,minutely,hourly,alerts"
-        }).done(function(results){
-            console.log(results);
-        });
-
+    //     $.get('http://api.openweathermap.org/data/2.5/weather',{
+    //         appid: weatherDefault,
+    //         lat:29.423017,
+    //         lon:-98.48527,
+    //         units: 'imperial',
+    //         exclude:"current,minutely,hourly,alerts"
+    //     }).done(function(results){
+    //         console.log(results);
+    //     });
+    //
     });
 
 
