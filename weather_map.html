@@ -17,14 +17,27 @@
 
 <h1>Weather Map Project</h1>
 <!--<div id='map' style='width: 400px; height: 300px;'></div>-->
-<div class = "container w-25 m-0">
-<article class = "d-flex flex-column border solid">
-    <p class = "current-weather"></p>
+<div class = "container m-0">
+<article class = "w-25 flex-column border solid">
+    <p class = "current-temp"></p>
     <p class = "real-feel"></p>
     <p class = "humidity"></p>
     <p class = "pressure"></p>
 </article>
+    <div id="forecast">
+        <div>Date, min/max, description, humidity, wind, pressure </div>
+    </div>
 </div>
+
+<!--<div class = "container w-25 m-0">-->
+<!--    <article id = day2 class = "d-flex flex-column border solid">-->
+<!--        <p class = "current-temp"></p>-->
+<!--        <p class = "real-feel"></p>-->
+<!--        <p class = "humidity"></p>-->
+<!--        <p class = "pressure"></p>-->
+<!--    </article>-->
+<!--</div>-->
+
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -53,31 +66,36 @@
             var currentWeather = results.main;
           console.log(results);
             console.log(currentWeather);
-            $('.current-weather').html('San Antonio\'s Weather Today: ' + currentWeather.temp + ' F');
+            $('.current-temp').html('San Antonio\'s Weather Today: ' + currentWeather.temp + ' F');
             $('.real-feel').html('The Real Feel: ' + currentWeather.feels_like + ' F');
             $('.humidity').html('The humidity is at: ' + currentWeather.humidity + '%');
             $('.pressure').html('The Pressure is at: ' + currentWeather.pressure);
 
         });
 
+        $.get("https://api.openweathermap.org/data/2.5/onecall", {
+            appid: weatherDefault,
+            lat:29.423017,
+            lon:-98.48527,
+            units: 'imperial',
+            exclude:"minutely,hourly,alerts"
+        }).done(function(results){
+            console.log(results);
+            results.daily.forEach(function (day,index){
+                console.log(day)
+                var html = "<div>"
+                html+= '<h4>' + day.dt+ '</h4>'
+                html+= '<p>' + day.temp.min + ' F' + ' / ' + day.temp.max + ' F' +'</p>'
+                // html+= '<p>' + day.description + '</p>'
+                html+= '<p>' + day.humidity + '%' +'</p>'
+                html+= '<p>' + day.wind_speed + ' mph' + '</p>'
+                html+= '<p>' + day.pressure + '</p>'
+                html += "</div>"
+                $('#forecast').append(html)
 
+            });
 
-        //TODO: How can we incorporate mapbox with this? How can we make it dynamic?
-
-        // TODO: Explore the docs... what endpoint can we use to get a forecast?
-
-        // TODO: What parameter can we include in order to get the daily forecast only
-
-    //     $.get('http://api.openweathermap.org/data/2.5/weather',{
-    //         appid: weatherDefault,
-    //         lat:29.423017,
-    //         lon:-98.48527,
-    //         units: 'imperial',
-    //         exclude:"current,minutely,hourly,alerts"
-    //     }).done(function(results){
-    //         console.log(results);
-    //     });
-    //
+        });
     });
 
 
