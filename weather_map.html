@@ -11,7 +11,7 @@
 
     <!-- Custom CSS -->
 
-    <title>Weather Map Lecture</title>
+    <title>Weather Map Project</title>
 </head>
 <body>
 
@@ -24,8 +24,8 @@
     <p class = "humidity"></p>
     <p class = "pressure"></p>
 </article>
-    <div id="forecast">
-        <div>Date, min/max, description, humidity, wind, pressure </div>
+    <div class= "w-25 flex-column border solid" id="forecast">
+<!--        <div>will need later</div>-->
     </div>
 </div>
 
@@ -84,9 +84,9 @@
             results.daily.forEach(function (day,index){
                 console.log(day)
                 var html = "<div>"
-                html+= '<h4>' + day.dt+ '</h4>'
+                html+= '<h4>' + 'Date: ' + new Date(results.daily[index].dt*1000).toDateString()+ '</h4>'
                 html+= '<p>' + day.temp.min + ' F' + ' / ' + day.temp.max + ' F' +'</p>'
-                // html+= '<p>' + day.description + '</p>'
+                html+= '<p>' + day.description + '</p>'
                 html+= '<p>' + day.humidity + '%' +'</p>'
                 html+= '<p>' + day.wind_speed + ' mph' + '</p>'
                 html+= '<p>' + day.pressure + '</p>'
