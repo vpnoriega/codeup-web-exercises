@@ -12,25 +12,34 @@
     <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid autem, ea eaque, eius ex iste iure labore libero minima, omnis perferendis perspiciatis quasi quisquam sint tenetur vel veniam voluptatibus. </p>
 <script>
 
-var buttonOne = document.getElementById("button1");
-console.log(buttonOne);
+    var buttonOne = document.getElementById("button1");
 
-    buttonOne.addEventListener("click", function(){
-        alert("This button has been clicked")
-})
+    console.log(buttonOne);
+
+    var alertMe = function (){
+        alert("This button was clicked!")
+    }
+
+    buttonOne.addEventListener("click", alertMe)
 
 var buttonTwo = document.getElementById("button2");
-    buttonTwo.addEventListener("click", function (){
-        var paragraph =document.getElementsByTagName("p");
-        paragraph[0].style.backgroundColor="rebeccapurple"
-    })
 
-buttonTwo.addEventListener("click", purpleparagraph)
+var purpleParagraph = function(){
+    var paragraph = document.getElementsByTagName("p");
+    paragraph[0].style.backgroundColor = "rebeccapurple"
+}
 
-var buttonThree = document.getElementById("button3");
-buttonThree.removeEventListener("click", function(){
+buttonTwo.addEventListener("click", purpleParagraph)
 
-});
+var buttonThree = document.getElementById("button3")
+
+buttonThree.addEventListener("click", function(){
+
+    buttonOne.removeEventListener("click", alertMe);
+    buttonTwo.removeEventListener("click", purpleParagraph);
+
+})
+
 
 
 </script>
