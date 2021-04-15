@@ -14,7 +14,8 @@ function checkWeather(isRaining) {
 
 }
 
-//checkWeather(false); //what happens?
+// checkWeather(false); //what happens?
+// it is undefined VALUE because the var umbrella is hoisted. So it will log undefined
 
 
 
@@ -28,8 +29,8 @@ function checkWeatherTwo(isRaining) {
 
 }
 
-//checkWeatherTwo(false) //What happens?
-
+// checkWeatherTwo(false) //What happens?
+//this logs an error because the variable is not defined, so it doesn't exist
 
 /*==============================================*/
 
@@ -85,14 +86,15 @@ const c = 30;
 
 
 // if (false) {
-//    var x = 2; //Undefined
+//    var x = 2; //Undefined - the value of X is undefined, but the variable still exists
 // }
 
 // if (false) {
 //     let x = 2; //Uncaught ReferenceError: x is not defined
+//     console.log("I'm in the if statement so I can see X:" + x) // will work
 // }
-
-// console.log(x);
+//
+// console.log(x); // Can't see it because I'm not in the block, will create refError
 
 
 
@@ -109,7 +111,7 @@ let greeting = "Hello my name is " + firstName + ' ' + lastName + '.';
 // console.log(greeting);
 
 //TODO: Refactor code from above, using template strings.
-
+let newGreeting = `Hello my name is ${firstName} ${lastName}. ${1+2}`
 
 // console.log(newGreeting);
 
@@ -140,7 +142,13 @@ itemsHtml += "</ul>";
 
 
 //new way
-
+let newItemsHtml = `
+    <ul>
+    <li>${items[0]}</li>
+    <li>${items[1]}</li>
+    <li>${items[2]}</li>
+</ul>
+`;
 
 // console.log(newItemsHtml);
 
@@ -156,6 +164,7 @@ let program = {
     technology: "HTML, CSS, JS, Java"
 }
 
+let programLetter = `Hello and thank you for your interest in ${program.name}! Our program is located in ${program.location}. The program lasts ${program.length}.`
 
 // console.log(programLetter);
 
@@ -168,6 +177,7 @@ let program = {
  *       For Of Loops
  *****************************/
 
+//Basic Loop:
 
 // const arr = ["one", "two", "three"];
 // for (let ele of arr) {
@@ -183,7 +193,9 @@ let program = {
 
 const days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 
-
+for (let week of days){
+    // console.log(week);
+}
 
 /*==============================================*/
 
@@ -191,7 +203,9 @@ const days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"
 
 const instructors = ["Douglas", "Kenneth", "Justin", "Casey", "David"]
 
-
+for (let names of instructors){
+    // console.log(names);
+}
 
 
 /* ****************************
@@ -204,13 +218,17 @@ function sayHello(name){
     return `Hello ${name}`;
 }
 
+// v1 (standard way, better for more lines of code)
+// let sayHelloAgain = (name) => {return `Hello, ${name}!`}
 
+// v2 (return and brackets/pars are not needed BUT if it's more than one line of code, you DO need version1)
 
+let sayHelloAgain = name => `Hello, ${name}!`
 
 // console.log(sayHelloAgain("Douglas")); //Hello Douglas
 // console.log(sayHelloAgain("Justin")); //Hello Justin
 // console.log(sayHelloAgain("Kenneth")); //Hello Kenneth
-
+//
 
 
 /*==============================================*/
@@ -220,14 +238,14 @@ function sayHello(name){
 // 	return a + b;
 // }
 
-
+let sum = (a,b) => a+b
 
 
 
 // console.log(sum(5, 3)); //8
 // console.log(sum(5, 20)); //25
 // console.log(sum(1, 9)); //10
-
+//
 
 
 
@@ -280,22 +298,28 @@ const addOneD = arg1 => arg1 + 1;
 //TODO Together: Refactor the following using ES6
 
 // old way
-// function sayHello(name) {
-// 	if (typeof name === 'undefined') {
-// 		name = 'World';
-// 	}
-//
-// 	return 'Hello, ' + name + '!';
-// }
+function sayHello(name) {
+	if (typeof name === 'undefined') {
+		name = 'World';
+	}
+
+	return 'Hello, ' + name + '!';
+}
+
+// console.log(sayHello());; // "Hello, World!"
+// console.log(sayHello('codeup'));; // "Hello, codeup!"
 
 
+let sayHello2 = (name = "World") => `Hello, ${name}!`
+//"world" is the default unless you pass a different value:
 
+console.log(sayHello2())
+console.log(sayHello2('codeup!'))
 
-
-// console.log(sayHello2());; // "Hello, World!"
-// console.log(sayHello2('codeup'));; // "Hello, codeup!"
-
-
+// Number example:
+let sum2 = (a=0, b = 0) => a + b; //default is 0
+console.log('Default Value: ', sum2())
+console.log('Default Value: ', sum2(5))
 
 /*==============================================*/
 
