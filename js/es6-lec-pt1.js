@@ -62,15 +62,15 @@ function checkWeatherTwo(isRaining) {
 /*
 * let and const (block scope vs. function scope)
 */
-
-{
-    var a = 10;
-}
-{
-    let b = 20;
-}
-
-const c = 30;
+//
+// {
+//     var a = 10;
+// }
+// {
+//     let b = 20;
+// }
+//
+// const c = 30;
 
 // console.log(a); // 10
 // console.log(b); // Uncaught ReferenceError: b is not defined
@@ -310,16 +310,16 @@ function sayHello(name) {
 // console.log(sayHello('codeup'));; // "Hello, codeup!"
 
 
-let sayHello2 = (name = "World") => `Hello, ${name}!`
-//"world" is the default unless you pass a different value:
-
-console.log(sayHello2())
-console.log(sayHello2('codeup!'))
-
-// Number example:
-let sum2 = (a=0, b = 0) => a + b; //default is 0
-console.log('Default Value: ', sum2())
-console.log('Default Value: ', sum2(5))
+// let sayHello2 = (name = "World") => `Hello, ${name}!`
+// //"world" is the default unless you pass a different value:
+//
+// console.log(sayHello2())
+// console.log(sayHello2('codeup!'))
+//
+// // Number example:
+// let sum2 = (a=0, b = 0) => a + b; //default is 0
+// console.log('Default Value: ', sum2())
+// console.log('Default Value: ', sum2(5))
 
 /*==============================================*/
 
