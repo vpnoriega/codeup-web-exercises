@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>es6 Map Filter and Reduce </h1>
+<script src = js/map-filter-reduce.js></script>
 <script>
 
   //~ * Map * ~
@@ -115,7 +116,7 @@
   let sum = numbers.reduce(function(total,num){
     return total + num;
   }, 0);
-  console.log(sum)
+  //console.log(sum)
 
 
   //TODO Together: Let's take a step a bit deeper with .reduce() - .reduce()'s output can take many forms and shapes. For example, let's say we wanted to have a little Javascript that would count the length of the strings in an array and return that info back to us in an object.
@@ -129,7 +130,7 @@
     return object;
   }, {}) //going to start with an empty object
 
-  console.log(strLengthObj);
+  //console.log(strLengthObj);
 
   //TODO Together: That's pretty wild, eh! Wonder what else we could get up to with .reduce() - how about we make a function and use .reduce() inside of it? We'll write a function named countWords that takes a sentence in a single string. We need to split that sentence into an array and then write a .reduce() that would let us know how many times each word appeared in the string.
 
@@ -201,7 +202,7 @@
     return ages + person.age;
   },0);
 
-  console.log(sumAges)
+  //console.log(sumAges)
 
 
 </script>
