@@ -9,7 +9,7 @@ function checkWeather(isRaining) {
         var umbrella = "Get an umbrella"
     } else {
         var sunglasses = "Grab your glasses!"
-        console.log(umbrella);
+        console.log(umbrella); // you can't use the var umbrella because it is hoisted on top
     }
 
 }
@@ -31,7 +31,7 @@ function checkWeatherTwo(isRaining) {
 
 // checkWeatherTwo(false) //What happens?
 //this logs an error because the variable is not defined, so it doesn't exist
-
+// ?? but what is const doing here, like what is the behavior behind it
 /*==============================================*/
 
 
@@ -39,6 +39,7 @@ function checkWeatherTwo(isRaining) {
 // instructor = 'Kenneth';
 // console.log(instructor); //Kenneth
 
+// Kenneth displays in the console because you can modify "let"
 
 
 
@@ -47,53 +48,48 @@ function checkWeatherTwo(isRaining) {
 // instructor = 'Kenneth';
 // console.log(instructor); // Uncaught TypeError: Assignment to constant variable.
 
-
-
-
-
-
+// you will have an error because "const" is unchangeable
 
 
 /*==============================================*/
-
-
 
 
 /*
 * let and const (block scope vs. function scope)
 */
-//
+
 // {
 //     var a = 10;
 // }
+// console.log(a); // 10
+
 // {
 //     let b = 20;
 // }
-//
-// const c = 30;
-
-// console.log(a); // 10
 // console.log(b); // Uncaught ReferenceError: b is not defined
-// console.log(c += 3); //Uncaught TypeError: Assignment to constant variable.
+//?? but why is it undefined?
 
+// const c = 30;
+// console.log(c); // 30
 
-
+// console.log(c += 3); //Uncaught TypeError because you cannot reassign a constant variable.
 
 
 /*==============================================*/
-
-
+//Further explanation:
 
 
 // if (false) {
-//    var x = 2; //Undefined - the value of X is undefined, but the variable still exists
+//    var x = 2;
 // }
+// Undefined - the value of X is undefined, but the variable still exists
 
-// if (false) {
-//     let x = 2; //Uncaught ReferenceError: x is not defined
-//     console.log("I'm in the if statement so I can see X:" + x) // will work
-// }
-//
+//?? wasn't sure what behavior to expect in this example, x+x = 4, but let x = 2 is undefined:
+if (false) {
+    let x = 2; //Uncaught ReferenceError: x is not defined
+    console.log("I'm in the if statement so I can see X:" + x) // will work
+}
+
 // console.log(x); // Can't see it because I'm not in the block, will create refError
 
 
@@ -114,13 +110,6 @@ let greeting = "Hello my name is " + firstName + ' ' + lastName + '.';
 let newGreeting = `Hello my name is ${firstName} ${lastName}. ${1+2}`
 
 // console.log(newGreeting);
-
-
-
-
-
-
-
 
 
 /*==============================================*/
@@ -169,23 +158,17 @@ let programLetter = `Hello and thank you for your interest in ${program.name}! O
 // console.log(programLetter);
 
 
-
-
-
-
 /*****************************
  *       For Of Loops
  *****************************/
 
 //Basic Loop:
 
-// const arr = ["one", "two", "three"];
-// for (let ele of arr) {
-//     console.log(ele);
-// }
-
-
-
+const arr = ["one", "two", "three"];
+for (let ele of arr) {
+    //console.log(ele);
+}
+// "ele" is the name of the "let" variable
 
 
 /*==============================================*/
@@ -194,8 +177,15 @@ let programLetter = `Hello and thank you for your interest in ${program.name}! O
 const days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 
 for (let week of days){
-    // console.log(week);
+     //console.log(week);
 }
+
+const colors = ["red", "orange", "yellow", "green", "blue", "ingdigo", "violet"]
+for (let rainbow of colors){
+    // console.log(rainbow)
+}
+//notice that you can only use the let INSIDE of the {} because it is a block function. If you use it outside you will get an error
+
 
 /*==============================================*/
 
@@ -213,22 +203,23 @@ for (let names of instructors){
  *****************************/
 //TODO TOGETHER: Rewrite the following function using arrow function syntax
 
-
 function sayHello(name){
     return `Hello ${name}`;
 }
+//console.log(sayHello("Vanessa"))
 
-// v1 (standard way, better for more lines of code)
-// let sayHelloAgain = (name) => {return `Hello, ${name}!`}
+// v1 (standard way, better for more lines of code):
 
-// v2 (return and brackets/pars are not needed BUT if it's more than one line of code, you DO need version1)
+let sayHelloAgain = (name) => {return `Hello, ${name}!`}
+//console.log(sayHelloAgain('Douglas'))
 
-let sayHelloAgain = name => `Hello, ${name}!`
+// v2 (return and brackets/parts are not needed BUT if it's more than one line of code, you DO need version1)
 
-// console.log(sayHelloAgain("Douglas")); //Hello Douglas
-// console.log(sayHelloAgain("Justin")); //Hello Justin
-// console.log(sayHelloAgain("Kenneth")); //Hello Kenneth
-//
+// let sayHelloAgain = name => `Hello, ${name}!`
+
+ //console.log(sayHelloAgain("Douglas")); //Hello Douglas
+ //console.log(sayHelloAgain("Justin")); //Hello Justin
+ //console.log(sayHelloAgain("Kenneth")); //Hello Kenneth
 
 
 /*==============================================*/
@@ -240,44 +231,44 @@ let sayHelloAgain = name => `Hello, ${name}!`
 
 let sum = (a,b) => a+b
 
-
-
 // console.log(sum(5, 3)); //8
 // console.log(sum(5, 20)); //25
 // console.log(sum(1, 9)); //10
-//
-
 
 
 /*==============================================*/
 //TODO: Rewrite the following function using arrow function syntax
 
 //Function declaration
-function addOne(arg1) {
-    return arg1 + 1;
-}
+// function addOne(arg1) {
+//     return arg1 + 1;
+// }
+
+// let addOne = (arg1) => {return arg1 + 1}
+// console.log(addOne(2)) //3
+
+//You can make it shorter since it's one line:
+let addOne = arg1 => arg1 + 1
+//console.log(addOne(2))
 
 
-//function expression
+//Step by Step:
+
+//Step 1: Change function expression
 let addOneA = function(arg1){
     return arg1 + 1;
 }
 
-
-//refactor. Remove function keyword and add =>
+//Step 2: Refactor by removing function keyword and add => after the parameter
 let addOneB = (arg1) => {
     return arg1 + 1;
 }
 
-// remove curly braces (if only one statement)
+// Step 3 (if only one statement):
+// remove {}
 let addOneC = (arg1) => arg1 + 1;
-
-//remove parens if only 1 input
+// then remove ()
 const addOneD = arg1 => arg1 + 1;
-
-
-
-
 
 
 // console.log(addOne(1));
@@ -287,10 +278,6 @@ const addOneD = arg1 => arg1 + 1;
 // console.log(addOneD(5));
 
 
-
-
-
-
 /* ****************************
  *       Default Function
  *       Parameter Values
@@ -298,40 +285,45 @@ const addOneD = arg1 => arg1 + 1;
 //TODO Together: Refactor the following using ES6
 
 // old way
-function sayHello(name) {
-	if (typeof name === 'undefined') {
-		name = 'World';
-	}
-
-	return 'Hello, ' + name + '!';
-}
+// function sayHello(name) {
+// 	if (typeof name === 'undefined') {
+// 		name = 'World';
+// 	}
+//
+// 	return 'Hello, ' + name + '!';
+// }
 
 // console.log(sayHello());; // "Hello, World!"
 // console.log(sayHello('codeup'));; // "Hello, codeup!"
 
 
-// let sayHello2 = (name = "World") => `Hello, ${name}!`
+let sayHello2 = (name = "World") => `Hello, ${name}!`
 // //"world" is the default unless you pass a different value:
-//
+
 // console.log(sayHello2())
 // console.log(sayHello2('codeup!'))
 //
 // // Number example:
-// let sum2 = (a=0, b = 0) => a + b; //default is 0
-// console.log('Default Value: ', sum2())
-// console.log('Default Value: ', sum2(5))
+let sum2 = (a=1, b = 0) => a + b; //default values are 1 and 0
+//console.log('Default Value: ', sum2()); // logs 1 because 1 + 0 = 1
+//console.log('Default Value: ', sum2(1,5)) // logs 6 because 1 + 5 = 6
 
 /*==============================================*/
 
 // TODO: Refactor the following function using arrow syntax, default function parameter values, and template strings.
 
-function helloCohort(greeting, cohort){
-    if(typeof greeting === "undefined"){
-        greeting = "Good Morning";
-    }
-    if(typeof cohort === "undefined"){
-        cohort = "Marco";
-    }
+// function helloCohort(greeting, cohort){
+//     if(typeof greeting === "undefined"){
+//         greeting = "Good Morning";
+//     }
+//     if(typeof cohort === "undefined"){
+//         cohort = "Marco";
+//     }
+//
+//     return greeting + " " + cohort;
+// }
 
-    return greeting + " " + cohort;
-}
+let helloCohort = (greeting = "Good Morning" , cohort = "Marco") => `${greeting} my favorite cohort: ${cohort}!`
+console.log(helloCohort()) // will log "Good morning my favorite cohort: Marco!" bc GOOD MORNING AND MARCO are the DEFAULT parameters
+
+console.log(helloCohort("good afternoon", "other Cohort")) // will log "Good afternoon my favorite cohort: other cohort" because you passed in 2 different arguments

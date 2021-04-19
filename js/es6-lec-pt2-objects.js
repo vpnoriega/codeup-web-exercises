@@ -9,33 +9,27 @@
 // let age = 8;
 // let dogName = "Kewpie";
 // let isCute = true;
-
-//old way
+//
+// //old way, list the keys and the values (values are the let vars above)
 // let oldDog = {
 // 	breed: breed,
 // 	age: age,
 // 	dogName: dogName,
 // 	isCute: isCute
 // }
-//
-// console.log(oldDog);
+
+//console.log(oldDog);
 
 
-
-// //new way
-
+//new way, list the properties and the values will display
 // let newDog ={
 //     breed,
 //     age,
 //     dogName,
 //     isCute
 // }
-
-
+//
 // console.log(newDog);
-
-
-
 
 
 /*****************************************************************
@@ -44,18 +38,18 @@
  *          Based on the name of the key
  *****************************************************************/
 
-// var personA = {
-//     name: 'codeup',
-//     age: 7
-// };
-//
-// // // old way
+var personA = {
+    name: 'codeup',
+    age: 7
+};
+
+//old way
 // let name = personA.name;
 // let age = personA.age;
-//
-//
-// console.log(name); // 'codeup'
-// console.log(age); // 4
+
+
+//console.log(name); // 'codeup'
+//console.log(age); // 4
 
 
 //TODO TOGETHER: REFACTOR the above approach using ES6
@@ -65,9 +59,7 @@
 // console.log(name);
 // console.log(age);
 
-
-
-
+//notice how you combine the properties in the obj first, then assign it to the const
 
 
 /*==============================================*/
@@ -168,14 +160,13 @@ const alphabet = ['A', 'B', 'C', 'D', 'E'];
 
 
 // TODO TOGETHER: To get all elements...Spread operator *BONUS
-// this is trippy, need to go back to this
 
-// const [a,b,c,...rest] = alphabet;
+const [a,b,c,...rest] = alphabet;
 //
 // console.log(a);
 // console.log(b);
 // console.log(c);
-// console.log(rest);
+// console.log(rest); // logs D and E because that is the "rest" of the values in the const alphabet array after C
 
 
 /*==============================================*/
@@ -193,36 +184,38 @@ const alphabet = ['A', 'B', 'C', 'D', 'E'];
 
 //new way
 
-function tellMeAbout({name,age}){
-    console.log(name)
-    console.log(age)
-}
+// function tellMeAbout({name,age}){
+//     console.log(name)
+//     console.log(age)
+// }
+//
+//
+// const person = {
+// 	name: 'Douglas',
+// 	age: 38
+// };
 
-
-const person = {
-	name: 'Douglas',
-	age: 38
-};
-
-tellMeAbout(person);
+//tellMeAbout(person);
 
 
 /*==============================================*/
 
 
+let shape1 = {
+	height: 10,
+	width: 10
+}
 
-// let shape1 = {
-// 	height: 10,
-// 	width: 10
-// }
-
-// let shape2 = {
-// 	height: 5,
-// 	width: 5
-// }
-
-// console.log(getArea(shape1)); //100
-// console.log(getArea(shape2)); //25
+let shape2 = {
+	height: 5,
+	width: 5
+}
 
 
 //TODO: Refactor the getArea function from above using arrow syntax
+
+let getArea = (shape1) => {return shape1.height * shape1.width}
+console.log(getArea(shape1))
+
+let getArea2 = (shape2) => {return shape2.height * shape2.width}
+console.log(getArea2(shape2))
