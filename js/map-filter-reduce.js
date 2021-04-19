@@ -59,7 +59,7 @@ console.log(sumYears);
 
 
 // 4b. Get the average:
-let averageYears = sumYears/5
+let averageYears = sumYears/users.length
 console.log(averageYears)
 
 
@@ -94,3 +94,7 @@ let userLanguages = users.reduce(function (language, person) {
 }, [])
 
 console.log(userLanguages);
+
+//Douglas' solution:
+let mapJoinSolution = `instructors are: ${users.map(user=>user.name).join (',')}. `;
+console.log(mapJoinSolution)
