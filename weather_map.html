@@ -6,10 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"-->
+<!--          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
 
     <!-- Custom CSS -->
+<style>
+    .container{
+        display: flex;
+        background: lightskyblue;
+        flex-direction: row;
+        margin: 0 auto;
+        max-width: 80%;
+        max-height: 100%;
+        justify-content: center;
+    }
+    .card{
+        margin: .5em;
+        border-radius: 2px;
+        background: white;
+        width: 250px;
+        height: 350px;
+        /* the following declarations make the card a flex container and justify and align its flex items */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .card-grid{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 1em;
+        flex-wrap: wrap;
+    }
+
+</style>
 
     <title>Weather Map Project</title>
 </head>
@@ -17,26 +48,25 @@
 
 <h1>Weather Map Project</h1>
 <!--<div id='map' style='width: 400px; height: 300px;'></div>-->
-<div class = "container m-0">
-<article class = "w-25 flex-column border solid">
-    <p class = "current-temp"></p>
-    <p class = "real-feel"></p>
-    <p class = "humidity"></p>
-    <p class = "pressure"></p>
-</article>
-    <div class= "w-25 flex-column border solid" id="forecast">
-<!--        <div>will need later</div>-->
+<div class = "container">
+    <div class="card-grid">
+    <!-- Today's Forecast -->
+    <article class = "card">
+        <section class = "current-temp"></section>
+        <section class = "real-feel"></section>
+        <section class = "humidity"></section>
+        <section class = "pressure"></section>
+    </article>
+
+
+    <!-- 5day forecast -->
+    <article class= "card" id="forecast">
+<!--        <div class="card"></div>-->
+    </article>
+
     </div>
 </div>
 
-<!--<div class = "container w-25 m-0">-->
-<!--    <article id = day2 class = "d-flex flex-column border solid">-->
-<!--        <p class = "current-temp"></p>-->
-<!--        <p class = "real-feel"></p>-->
-<!--        <p class = "humidity"></p>-->
-<!--        <p class = "pressure"></p>-->
-<!--    </article>-->
-<!--</div>-->
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -58,6 +88,9 @@
         // GET REQUEST to OpenWeatherMap using city parameter
         // https://openweathermap.org/current
 
+
+/** CURRENT WEATHER:*/
+
         $.get("https://api.openweathermap.org/data/2.5/weather", {
           q:"San Antonio, US",
         appid: weatherDefault,
@@ -73,6 +106,9 @@
 
         });
 
+
+        /** 5 DAY FORECAST: */
+
         $.get("https://api.openweathermap.org/data/2.5/onecall", {
             appid: weatherDefault,
             lat:29.423017,
@@ -83,13 +119,13 @@
             console.log(results);
             results.daily.forEach(function (day,index){
                 console.log(day)
-                var html = "<div>"
+                var html = "<div class='card'>"
                 html+= '<h4>' + 'Date: ' + new Date(results.daily[index].dt*1000).toDateString()+ '</h4>'
-                html+= '<p>' + day.temp.min + ' F' + ' / ' + day.temp.max + ' F' +'</p>'
-                html+= '<p>' + day.description + '</p>'
-                html+= '<p>' + day.humidity + '%' +'</p>'
-                html+= '<p>' + day.wind_speed + ' mph' + '</p>'
-                html+= '<p>' + day.pressure + '</p>'
+                html+= '<p>' + 'Min/Max: ' + day.temp.min + ' F' + ' / ' + day.temp.max + ' F' +'</p>'
+                //html+= '<p>' + day.description + '</p>'
+                html+= '<p>' + 'Humidity: ' + day.humidity + '%' +'</p>'
+                html+= '<p>' + 'Wind Speed: ' + day.wind_speed + ' mph' + '</p>'
+                html+= '<p>' + 'Pressure: ' + day.pressure + '</p>'
                 html += "</div>"
                 $('#forecast').append(html)
 
