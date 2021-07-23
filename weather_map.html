@@ -11,12 +11,6 @@
 <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"-->
 <!--          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
 
-    <!-- Custom CSS -->
-<style>
-
-
-</style>
-
 </head>
 <body>
 
@@ -25,7 +19,8 @@
 <div class = "container">
     <div class="card-grid">
     <!-- Today's Forecast -->
-    <article class = "card">
+    <article class = "card" id="current-weather">
+        <h3>San Antonio's Weather Today:</h3>
         <section class = "current-temp"></section>
         <section class = "real-feel"></section>
         <section class = "humidity"></section>
@@ -74,10 +69,10 @@
             var currentWeather = results.main;
           console.log(results);
             console.log(currentWeather);
-            $('.current-temp').html('San Antonio\'s Weather Today: ' + currentWeather.temp + ' F');
-            $('.real-feel').html('The Real Feel: ' + currentWeather.feels_like + ' F');
-            $('.humidity').html('The humidity is at: ' + currentWeather.humidity + '%');
-            $('.pressure').html('The Pressure is at: ' + currentWeather.pressure);
+            $('.current-temp').html('Temperature: ' + currentWeather.temp + ' F');
+            $('.real-feel').html('Real Feel: ' + currentWeather.feels_like + ' F');
+            $('.humidity').html('Humidity: ' + currentWeather.humidity + '%');
+            $('.pressure').html('Pressure: ' + currentWeather.pressure);
 
         });
 
