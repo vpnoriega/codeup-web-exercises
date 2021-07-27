@@ -16,10 +16,11 @@
 
 .card{
     margin: .5em;
-    border-radius: 2px;
     background: white;
     height: 350px;
     align-items: center;
+    border-radius: .5rem;
+    padding: .5rem;
 }
 
 #current-weather{

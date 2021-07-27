@@ -29,9 +29,9 @@
 
 
     <!-- 5day forecast -->
-    <article class= "card" id="forecast">
+    <div class= "boundary" id="forecast">
 <!--        <div class="card"></div>-->
-    </article>
+    </div>
 
     </div>
 </div>
@@ -89,13 +89,13 @@
             console.log(results);
             results.daily.forEach(function (day,index){
                 console.log(day)
-                var html = "<div class='card'>"
+                var html = "<article class='card'>"
                 html+= '<h4>' + 'Date: ' + new Date(results.daily[index].dt*1000).toDateString()+ '</h4>'
-                html+= '<p>' + 'Min/Max: ' + day.temp.min + ' F' + ' / ' + day.temp.max + ' F' +'</p>'
-                //html+= '<p>' + day.description + '</p>'
-                html+= '<p>' + 'Humidity: ' + day.humidity + '%' +'</p>'
-                html+= '<p>' + 'Wind Speed: ' + day.wind_speed + ' mph' + '</p>'
-                html+= '<p>' + 'Pressure: ' + day.pressure + '</p>'
+                html+= '<p>' + '<strong>' + 'Min/Max: ' +'</strong>'+ day.temp.min + ' F' + ' / ' + day.temp.max + ' F' +'</p>'
+                html+= '<p>' + '<strong>' + 'Real Feel: ' + '</strong>' + day.feels_like.day + ' F' + '</p>'
+                html+= '<p>' + '<strong>' + 'Humidity: ' + '</strong>' + day.humidity + '%' +'</p>'
+                html+= '<p>' + '<strong>' + 'Wind Speed: ' + '</strong>' + day.wind_speed + ' mph' + '</p>'
+                html+= '<p>' +  '<strong>' + 'Pressure: ' + '</strong>' + day.pressure + '</p>'
                 html += "</div>"
                 $('#forecast').append(html)
 
