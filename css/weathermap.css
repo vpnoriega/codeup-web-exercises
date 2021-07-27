@@ -4,6 +4,7 @@
     margin: 0 auto;
     width: 100%;
     height: 100%;
+    justify-content: center;
 }
 
 .card-grid{
@@ -17,7 +18,6 @@
 .card{
     margin: .5em;
     background: white;
-    height: 350px;
     align-items: center;
     border-radius: .5rem;
     padding: .5rem;
@@ -26,6 +26,7 @@
 #current-weather{
     align-self: center;
     text-align: center;
+    height: auto;
 }
 
 #forecast{
