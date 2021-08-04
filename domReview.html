@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Review</title>
+</head>
+<body>
+<h1>List One</h1>
+<ul>
+  <li class="odd list-one-item">List 1, Item 1</li>
+  <li class="even list-one-item">List 1, Item 2</li>
+</ul>
+<h1>List Two</h1>
+<ul>
+  <li class="odd list-two-item">List 2, Item 1</li>
+  <li class="even list-two-item">List 2, Item 2</li>
+</ul>
+<button id="btnToClick">Click Me</button>
+<form name="login">
+    <div>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password">
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+
+<script>
+  "use strict";
+  (function() {
+    // Get all elements with class 'even'
+    var evenElements = document.getElementsByClassName('even');
+
+    // Print the first element
+    console.log(evenElements[0]); // Prints li.even.list-one-item
+
+    // Print all elements
+    for (var i = 0; i < evenElements.length; i++) {
+      console.log(evenElements[i]);
+    }
+
+    // Prints:
+    // li.even.list-one-item
+    // li.even.list-two-item
+
+    var listItems = document.getElementsByTagName('li');
+
+    // Print the first list item
+    console.log(listItems[0]); // Prints li.odd.list-one-item
+
+    // Print all the list items
+    for (var i = 0; i < listItems.length; i++) {
+      console.log(listItems[i]);
+    }
+
+    // Prints
+    // li.odd.list-one-item
+    // li.even.list-one-item
+    // li.odd.list-two-item
+    // li.even.list-two-item
+
+      var btnToClick = document.getElementById('btnToClick');
+
+      console.log(btnToClick); // prints <button id="btnToClick">Click Me</button>
+
+      // get the "username" input
+      var usernameInput = document.forms.login.username;
+
+      // log the value of the "username" input
+      console.log(usernameInput.value);
+  })();
+</script>
+</body>
+</html>
